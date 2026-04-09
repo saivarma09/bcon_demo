@@ -46,16 +46,14 @@
   /* ── CANVAS HERO ── */
   #hero-canvas {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    z-index: 0; pointer-events: none;
-    opacity: 0.18;
+    z-index: 0; pointer-events: none; opacity: 0.18;
   }
   .hero-section {
     position: relative; z-index: 1;
     min-height: 100vh;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    text-align: center;
-    padding: 2rem;
+    text-align: center; padding: 2rem;
   }
   .hero-badge {
     font-family: 'Geist Mono', monospace;
@@ -63,43 +61,33 @@
     color: var(--accent);
     background: rgba(61,79,255,0.08);
     border: 1px solid rgba(61,79,255,0.22);
-    padding: 0.4rem 1rem;
-    border-radius: 2rem;
-    margin-bottom: 2rem;
-    display: inline-block;
+    padding: 0.4rem 1rem; border-radius: 2rem;
+    margin-bottom: 2rem; display: inline-block;
     animation: fadeSlideUp 0.8s ease both;
   }
   .hero-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', serif; font-weight: 900;
     font-size: clamp(4rem, 10vw, 9rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
+    line-height: 0.9; letter-spacing: -0.03em;
     animation: fadeSlideUp 0.8s 0.15s ease both;
     color: var(--primary);
   }
   .hero-title .accent-word {
     background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--text-muted);
-    max-width: 520px;
-    margin: 1.5rem auto 0;
-    animation: fadeSlideUp 0.8s 0.3s ease both;
-    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
+    max-width: 520px; margin: 1.5rem auto 0;
+    animation: fadeSlideUp 0.8s 0.3s ease both; font-weight: 300;
   }
   .hero-stats {
-    display: flex; gap: 3rem;
-    margin-top: 3.5rem;
+    display: flex; gap: 3rem; margin-top: 3.5rem;
     animation: fadeSlideUp 0.8s 0.45s ease both;
   }
   .stat { text-align: center; }
   .stat-num {
-    font-family: 'Fraunces', serif; font-weight: 900;
-    font-size: 2.2rem;
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 2.2rem;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
@@ -141,16 +129,10 @@
   }
 
   /* ── WHAT IS BCON ── */
-  .what-grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem; margin-top: 3rem;
-  }
+  .what-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
   .what-card {
-    background: var(--bg3);
-    border: 1px solid rgba(61,79,255,0.1);
-    border-radius: 16px;
-    padding: 2rem;
-    position: relative; overflow: hidden;
+    background: var(--bg3); border: 1px solid rgba(61,79,255,0.1);
+    border-radius: 16px; padding: 2rem; position: relative; overflow: hidden;
     transition: border-color 0.3s, transform 0.3s;
     opacity: 0; transform: translateY(30px);
     box-shadow: 0 2px 16px rgba(0,0,0,0.05);
@@ -159,190 +141,54 @@
   .what-card:hover { border-color: rgba(61,79,255,0.25); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(61,79,255,0.08); }
   .what-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(to right, var(--accent), var(--accent2));
-    opacity: 0; transition: opacity 0.3s;
+    background: linear-gradient(to right, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.3s;
   }
   .what-card:hover::before { opacity: 1; }
-  .card-icon {
-    width: 48px; height: 48px; border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; margin-bottom: 1.2rem;
-  }
+  .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
   .card-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--primary); }
   .card-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
 
   /* ── ARCHITECTURE ── */
   .arch-section { background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%); }
   .arch-diagram {
-    margin-top: 3rem;
-    display: grid; grid-template-columns: 1fr auto 1fr;
-    gap: 0; align-items: center;
-    opacity: 0; transform: translateY(30px);
+    margin-top: 3rem; display: grid; grid-template-columns: 1fr auto 1fr;
+    gap: 0; align-items: center; opacity: 0; transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .arch-diagram.revealed { opacity: 1; transform: translateY(0); }
-  .arch-box {
-    background: var(--bg3);
-    border: 1px solid rgba(61,79,255,0.12);
-    border-radius: 20px; padding: 2rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  }
-  .arch-box-title {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem;
-    margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem;
-    color: var(--primary);
-  }
+  .arch-box { background: var(--bg3); border: 1px solid rgba(61,79,255,0.12); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+  .arch-box-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; color: var(--primary); }
   .arch-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
   .arch-dot.green { background: var(--accent2); }
-  .arch-item {
-    display: flex; align-items: center; gap: 0.7rem;
-    padding: 0.55rem 0.8rem; border-radius: 8px;
-    font-size: 0.85rem; color: var(--text-muted);
-    font-family: 'Geist Mono', monospace;
-    margin-bottom: 0.4rem;
-    transition: background 0.2s, color 0.2s;
-  }
+  .arch-item { display: flex; align-items: center; gap: 0.7rem; padding: 0.55rem 0.8rem; border-radius: 8px; font-size: 0.85rem; color: var(--text-muted); font-family: 'Geist Mono', monospace; margin-bottom: 0.4rem; transition: background 0.2s, color 0.2s; }
   .arch-item:hover { background: rgba(61,79,255,0.06); color: var(--text); }
   .arch-item-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
-  .arch-arrow {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0.4rem; padding: 0 2rem; color: var(--text-muted);
-    font-family: 'Geist Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
-  }
-  .arch-arrow-line {
-    width: 80px; height: 1px;
-    background: linear-gradient(to right, var(--accent), var(--accent2));
-    position: relative;
-  }
-  .arch-arrow-line::after {
-    content: ''; position: absolute; right: -1px; top: -3px;
-    border-left: 6px solid var(--accent2); border-top: 3px solid transparent; border-bottom: 3px solid transparent;
-  }
-  .arch-center {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    border: 1px solid rgba(61,79,255,0.3);
-    border-radius: 20px; padding: 2.5rem 2rem; text-align: center;
-    box-shadow: 0 8px 48px rgba(22,13,70,0.18);
-  }
+  .arch-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; padding: 0 2rem; color: var(--text-muted); font-family: 'Geist Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; }
+  .arch-arrow-line { width: 80px; height: 1px; background: linear-gradient(to right, var(--accent), var(--accent2)); position: relative; }
+  .arch-arrow-line::after { content: ''; position: absolute; right: -1px; top: -3px; border-left: 6px solid var(--accent2); border-top: 3px solid transparent; border-bottom: 3px solid transparent; }
+  .arch-center { background: linear-gradient(135deg, var(--primary), var(--primary-light)); border: 1px solid rgba(61,79,255,0.3); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 8px 48px rgba(22,13,70,0.18); }
   .arch-center-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.6rem; margin-bottom: 0.4rem; color: #fff; }
   .arch-center-sub { color: rgba(255,255,255,0.55); font-size: 0.8rem; font-family: 'Geist Mono', monospace; }
   .arch-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.2rem; }
-  .arch-badge {
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 6px; padding: 0.25rem 0.65rem;
-    font-size: 0.72rem; font-family: 'Geist Mono', monospace; color: rgba(255,255,255,0.75);
-  }
+  .arch-badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 0.25rem 0.65rem; font-size: 0.72rem; font-family: 'Geist Mono', monospace; color: rgba(255,255,255,0.75); }
 
-  /* ── NODES SECTION ── */
-  .nodes-section { }
+  /* ── NODES ── */
   .nodes-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
-  .nodes-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-  }
-  .node-card {
-    background: var(--bg3);
-    border: 1px solid rgba(61,79,255,0.1);
-    border-radius: 14px;
-    padding: 1.4rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative; overflow: hidden;
-    opacity: 0; transform: scale(0.95);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  }
+  .nodes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .node-card { background: var(--bg3); border: 1px solid rgba(61,79,255,0.1); border-radius: 14px; padding: 1.4rem; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; opacity: 0; transform: scale(0.95); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
   .node-card.revealed { opacity: 1; transform: scale(1); transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s; }
   .node-card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
   .node-card-color { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; margin-bottom: 1rem; }
   .node-card-type { font-family: 'Geist Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; opacity: 0.6; }
   .node-card-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.98rem; margin-bottom: 0.6rem; color: var(--primary); }
   .node-card-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
-  .node-card-pill {
-    display: inline-block; margin-top: 0.8rem;
-    font-size: 0.65rem; font-family: 'Geist Mono', monospace; letter-spacing: 0.08em;
-    padding: 0.2rem 0.6rem; border-radius: 4px;
-  }
+  .node-card-pill { display: inline-block; margin-top: 0.8rem; font-size: 0.65rem; font-family: 'Geist Mono', monospace; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; }
 
-  /* ── WORKFLOW DEMO ── */
-  .flow-demo {
-    background: var(--bg2);
-  }
-  .flow-canvas {
-    margin-top: 3rem;
-    background: var(--bg3);
-    border: 1px solid rgba(61,79,255,0.1);
-    border-radius: 20px;
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.06);
-  }
-  .flow-canvas.revealed { opacity: 1; transform: translateY(0); }
-  .flow-canvas::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(circle, rgba(61,79,255,0.06) 1px, transparent 1px);
-    background-size: 28px 28px;
-    pointer-events: none;
-  }
-  .flow-row {
-    display: flex; align-items: center; gap: 0;
-    position: relative; z-index: 1;
-    flex-wrap: wrap;
-  }
-  .flow-row + .flow-row { margin-top: 1.5rem; }
-  .flow-node {
-    background: var(--bg);
-    border: 1.5px solid rgba(61,79,255,0.15);
-    border-radius: 12px;
-    padding: 1rem 1.4rem;
-    min-width: 160px;
-    position: relative;
-    transition: all 0.3s;
-  }
-  .flow-node:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(61,79,255,0.12); }
-  .flow-node-top { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem; }
-  .flow-node-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .flow-node-label { font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.85rem; color: var(--primary); }
-  .flow-node-sub { font-size: 0.72rem; color: var(--text-muted); font-family: 'Geist Mono', monospace; }
-  .flow-connector {
-    flex: 1; height: 2px; min-width: 30px;
-    background: linear-gradient(to right, rgba(61,79,255,0.2), var(--accent), rgba(61,79,255,0.2));
-    position: relative;
-    animation: flowPulse 2s infinite;
-  }
-  .flow-connector::after {
-    content: ''; position: absolute; right: -1px; top: -3px;
-    border-left: 7px solid var(--accent); border-top: 4px solid transparent; border-bottom: 4px solid transparent;
-  }
-  .flow-split { display: flex; flex-direction: column; gap: 1rem; flex: 1; }
-  .flow-branch { display: flex; align-items: center; gap: 0; }
-  .flow-branch-label {
-    font-size: 0.65rem; font-family: 'Geist Mono', monospace; letter-spacing: 0.1em;
-    padding: 0.2rem 0.5rem; border-radius: 4px; white-space: nowrap;
-  }
-  .true-label { background: rgba(4,120,87,0.08); color: #047857; border: 1px solid rgba(4,120,87,0.2); }
-  .false-label { background: rgba(220,38,38,0.08); color: #dc2626; border: 1px solid rgba(220,38,38,0.2); }
-
-  /* ── ROLES SECTION ── */
-  .roles-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; margin-top: 3rem;
-  }
-  .role-card {
-    background: var(--bg3);
-    border: 1px solid rgba(61,79,255,0.1);
-    border-radius: 16px; padding: 2rem;
-    opacity: 0; transform: translateY(30px);
-    position: relative; overflow: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
-  }
+  /* ── ROLES ── */
+  .roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .role-card { background: var(--bg3); border: 1px solid rgba(61,79,255,0.1); border-radius: 16px; padding: 2rem; opacity: 0; transform: translateY(30px); position: relative; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
   .role-card.revealed { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .role-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-  }
+  .role-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
   .role-card.super::after { background: linear-gradient(to right, #d4860a, #e84444); }
   .role-card.admin::after { background: linear-gradient(to right, var(--accent), #7c3aed); }
   .role-card.user::after { background: linear-gradient(to right, var(--accent2), #047857); }
@@ -354,18 +200,9 @@
   .role-features li:last-child { border-bottom: none; }
   .role-features li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-family: 'Geist Mono', monospace; font-size: 0.75rem; margin-top: 0.1rem; }
 
-  /* ── SECURITY SECTION ── */
-  .security-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 2rem; margin-top: 3rem;
-  }
-  .security-card {
-    background: var(--bg3); border: 1px solid rgba(61,79,255,0.1);
-    border-radius: 16px; padding: 2rem;
-    opacity: 0; transform: translateX(-20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
-  }
+  /* ── SECURITY ── */
+  .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .security-card { background: var(--bg3); border: 1px solid rgba(61,79,255,0.1); border-radius: 16px; padding: 2rem; opacity: 0; transform: translateX(-20px); transition: opacity 0.6s ease, transform 0.6s ease; box-shadow: 0 2px 16px rgba(0,0,0,0.04); }
   .security-card.revealed { opacity: 1; transform: translateX(0); }
   .security-card:nth-child(even) { transform: translateX(20px); }
   .security-card:nth-child(even).revealed { transform: translateX(0); }
@@ -377,80 +214,708 @@
   .sec-list li span { color: var(--accent2); flex-shrink: 0; font-family: 'Geist Mono', monospace; font-size: 0.75rem; margin-top: 0.1rem; }
 
   /* ── CTA ── */
-  .cta-section {
-    text-align: center; padding: 6rem 2rem;
-    background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-  }
+  .cta-section { text-align: center; padding: 6rem 2rem; background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); }
   .cta-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin-bottom: 1.5rem; color: var(--primary); }
   .cta-sub { color: var(--text-muted); font-size: 1.1rem; max-width: 450px; margin: 0 auto 3rem; font-weight: 300; }
-  .cta-url {
-    display: inline-block;
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--accent2);
-    background: rgba(0,168,158,0.08);
-    border: 1px solid rgba(0,168,158,0.25);
-    padding: 0.8rem 1.8rem; border-radius: 8px;
-    letter-spacing: 0.05em;
-  }
+  .cta-url { display: inline-block; font-family: 'Geist Mono', monospace; font-size: 0.85rem; color: var(--accent2); background: rgba(0,168,158,0.08); border: 1px solid rgba(0,168,158,0.25); padding: 0.8rem 1.8rem; border-radius: 8px; letter-spacing: 0.05em; }
 
   /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid rgba(61,79,255,0.1);
-    padding: 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-    max-width: 1100px; margin: 0 auto;
-    color: var(--text-muted); font-size: 0.8rem;
-    font-family: 'Geist Mono', monospace;
-  }
+  footer { border-top: 1px solid rgba(61,79,255,0.1); padding: 2rem; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; color: var(--text-muted); font-size: 0.8rem; font-family: 'Geist Mono', monospace; }
   .footer-logo { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.2rem; color: var(--primary); }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.3); }
-  }
-  @keyframes flowPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-  }
-  @keyframes nodePop {
-    0% { transform: scale(0.8); opacity: 0; }
-    60% { transform: scale(1.05); }
-    100% { transform: scale(1); opacity: 1; }
-  }
-  .glow-line {
-    position: absolute; pointer-events: none;
-    background: linear-gradient(to right, transparent, var(--accent), transparent);
-    height: 1px; opacity: 0.1;
-    width: 100%;
-  }
-
   /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.2rem 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(245,244,240,0.88);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(61,79,255,0.1);
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(245,244,240,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(61,79,255,0.1); }
   .nav-logo { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--primary); }
   .nav-logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; font-family: 'Geist', sans-serif; }
   .nav-links a:hover { color: var(--primary); }
 
+  /* ── ANIMATIONS ── */
+  @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollPulse { 0%, 100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.3); } }
+  @keyframes flowPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+  /* ═══════════════════════════════════════════════════════════════
+     INTERACTIVE WORKFLOW TUTORIAL
+     Total animation loop: 24 seconds
+  ═══════════════════════════════════════════════════════════════ */
+
+  .flow-demo { background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%); }
+
+  /* Phase progress bar */
+  .demo-phase-bar {
+    display: flex; gap: 0.75rem; align-items: center;
+    margin-bottom: 1.8rem; flex-wrap: wrap;
+  }
+  .demo-phase {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-family: 'Geist Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em;
+    padding: 0.35rem 0.9rem; border-radius: 20px;
+    border: 1px solid rgba(61,79,255,0.15);
+    color: var(--text-muted); background: transparent;
+    transition: all 0.4s; opacity: 0.5;
+  }
+  .demo-phase.ph-active { color: var(--accent); background: rgba(61,79,255,0.08); border-color: rgba(61,79,255,0.3); opacity: 1; }
+  .demo-phase-num { width: 18px; height: 18px; border-radius: 50%; background: rgba(61,79,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600; }
+  .ph-active .demo-phase-num { background: var(--accent); color: white; }
+  .demo-phase-sep { color: rgba(61,79,255,0.25); font-family: 'Geist Mono', monospace; font-size: 0.8rem; }
+
+  /* Editor frame */
+  .editor-demo {
+    position: relative;
+    display: flex;
+    background: var(--bg3);
+    border: 1px solid rgba(61,79,255,0.14);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 430px;
+    box-shadow: 0 8px 48px rgba(22,13,70,0.1), 0 2px 12px rgba(0,0,0,0.06);
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .editor-demo.revealed { opacity: 1; transform: translateY(0); }
+
+  /* Editor top bar */
+  .editor-topbar {
+    position: absolute; top: 0; left: 0; right: 0; height: 38px;
+    background: var(--bg2); border-bottom: 1px solid rgba(61,79,255,0.1);
+    display: flex; align-items: center; padding: 0 1rem; gap: 0.5rem;
+    z-index: 50; flex-shrink: 0;
+  }
+  .editor-topbar-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .editor-topbar-title {
+    font-family: 'Geist Mono', monospace; font-size: 0.72rem;
+    color: var(--text-muted); margin-left: 0.5rem; flex: 1;
+  }
+  .editor-topbar-actions { display: flex; gap: 0.4rem; align-items: center; }
+  .editor-zoom-btn {
+    font-family: 'Geist Mono', monospace; font-size: 0.65rem;
+    color: var(--text-muted); padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(61,79,255,0.12); border-radius: 4px; background: var(--bg3);
+  }
+
+  /* Below top bar */
+  .editor-body {
+    display: flex; width: 100%; margin-top: 38px; height: calc(100% - 38px);
+  }
+
+  /* Left sidebar – node palette */
+  .demo-sidebar {
+    width: 172px; flex-shrink: 0;
+    background: var(--bg2);
+    border-right: 1px solid rgba(61,79,255,0.1);
+    padding: 0.85rem 0.75rem;
+    overflow: hidden;
+    z-index: 10;
+  }
+  .demo-sidebar-title {
+    font-family: 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .demo-sidebar-group { font-family: 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(107,104,128,0.6); margin: 0.7rem 0 0.3rem; }
+  .demo-node-item {
+    display: flex; align-items: center; gap: 0.45rem;
+    padding: 0.42rem 0.6rem; border-radius: 7px;
+    border: 1px solid rgba(61,79,255,0.08);
+    background: var(--bg3); margin-bottom: 0.3rem;
+    font-size: 0.75rem; color: var(--text);
+    font-family: 'Geist', sans-serif; cursor: grab;
+    transition: all 0.2s; user-select: none;
+  }
+  .demo-node-item:hover { border-color: rgba(61,79,255,0.2); background: rgba(255,255,255,0.9); }
+  .dni-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Canvas area */
+  .demo-canvas {
+    flex: 1; position: relative; overflow: hidden;
+    background: var(--bg3);
+  }
+  /* Dot grid */
+  .demo-canvas::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(61,79,255,0.065) 1px, transparent 1px);
+    background-size: 24px 24px; pointer-events: none; z-index: 0;
+  }
+
+  /* Run button */
+  .demo-run-btn {
+    position: absolute; top: 10px; right: 10px; z-index: 20;
+    background: linear-gradient(135deg, var(--accent), #5c6fff);
+    color: white; border: none; border-radius: 8px;
+    padding: 0.38rem 1rem; font-family: 'Geist Mono', monospace;
+    font-size: 0.73rem; letter-spacing: 0.06em; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(61,79,255,0.3);
+    animation: runBtnAnim 24s linear infinite;
+  }
+  @keyframes runBtnAnim {
+    0%,  62%  { transform: scale(1); box-shadow: 0 2px 8px rgba(61,79,255,0.3); }
+    65%        { transform: scale(1.08); box-shadow: 0 4px 20px rgba(61,79,255,0.55); }
+    68%        { transform: scale(0.95); box-shadow: 0 1px 4px rgba(61,79,255,0.2); }
+    70%        { transform: scale(1); box-shadow: 0 2px 8px rgba(61,79,255,0.3); }
+    100%       { transform: scale(1); box-shadow: 0 2px 8px rgba(61,79,255,0.3); }
+  }
+
+  /* SVG edges layer */
+  .demo-edges {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 5; overflow: visible;
+  }
+  .demo-edge {
+    fill: none; stroke-width: 1.8; stroke-linecap: round;
+    stroke-dasharray: 300; stroke-dashoffset: 300;
+    opacity: 0;
+  }
+  /* Exec flow pulse paths (animated dashes traveling along edges) */
+  .exec-edge {
+    fill: none; stroke-width: 2.5; stroke-linecap: round;
+    stroke-dasharray: 10 40; stroke-dashoffset: 0;
+    opacity: 0;
+  }
+
+  /* ── Workflow nodes on canvas ── */
+  .wf-node {
+    position: absolute; width: 152px;
+    background: var(--bg3); border: 1.5px solid rgba(61,79,255,0.14);
+    border-radius: 10px; padding: 0.55rem 0.75rem;
+    pointer-events: none; opacity: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    z-index: 10;
+  }
+  .wf-node-top { display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.18rem; }
+  .wf-node-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .wf-node-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.8rem; color: var(--primary); }
+  .wf-node-sub { font-family: 'Geist Mono', monospace; font-size: 0.62rem; color: var(--text-muted); padding-left: 1.1rem; }
+  .wf-node-badge {
+    display: inline-block; font-family: 'Geist Mono', monospace;
+    font-size: 0.56rem; letter-spacing: 0.07em; padding: 0.1rem 0.4rem;
+    border-radius: 3px; margin-top: 0.3rem; margin-left: 1.1rem;
+  }
+  /* Handles */
+  .wf-handle {
+    position: absolute; width: 11px; height: 11px; border-radius: 50%;
+    background: var(--bg3); border: 2px solid rgba(61,79,255,0.25);
+    top: 50%; transform: translateY(-50%); z-index: 11;
+    transition: border-color 0.3s;
+  }
+  .wf-handle.r { right: -6px; }
+  .wf-handle.l { left: -6px; }
+  .wf-handle.rt { right: -6px; top: 38%; transform: none; }
+  .wf-handle.rb { right: -6px; top: 62%; transform: none; }
+  /* Status badge (✓ checkmark) */
+  .wf-node-check {
+    position: absolute; top: 6px; right: 7px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent2); color: white;
+    font-size: 0.62rem; display: flex; align-items: center; justify-content: center;
+    opacity: 0; font-weight: 700;
+  }
+  /* AI spinner (Bedrock node) */
+  .wf-ai-ring {
+    position: absolute; top: 5px; right: 6px;
+    width: 18px; height: 18px; opacity: 0;
+  }
+  .wf-ai-ring svg { animation: spinRing 1s linear infinite; }
+  @keyframes spinRing { to { transform: rotate(360deg); } }
+
+  /* ── Branch labels ── */
+  .branch-label {
+    position: absolute; font-family: 'Geist Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.08em; padding: 0.12rem 0.45rem;
+    border-radius: 3px; opacity: 0; pointer-events: none; z-index: 15;
+  }
+  .bl-true  { background: rgba(4,120,87,0.09); color: #047857; border: 1px solid rgba(4,120,87,0.22); }
+  .bl-false { background: rgba(220,38,38,0.09); color: #dc2626; border: 1px solid rgba(220,38,38,0.22); }
+
+  /* ── Step label overlay ── */
+  .demo-hint {
+    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+    background: rgba(22,13,70,0.88); color: rgba(255,255,255,0.92);
+    padding: 0.38rem 1.2rem; border-radius: 20px;
+    font-family: 'Geist Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em;
+    white-space: nowrap; z-index: 40; opacity: 0; backdrop-filter: blur(8px);
+    pointer-events: none;
+  }
+  .demo-hint .hint-dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    margin-right: 0.45rem; vertical-align: middle;
+  }
+
+  /* ── Cursor SVG ── */
+  .demo-cursor {
+    position: absolute; left: 0; top: 0;
+    width: 18px; height: 22px; z-index: 50;
+    pointer-events: none; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.45));
+    opacity: 0;
+    animation: cursorMove 24s linear infinite;
+  }
+
+  /* ══════════════════════════════════
+     CTA BUTTON
+  ══════════════════════════════════ */
+  .try-app-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white; text-decoration: none;
+    padding: 0.85rem 2.2rem; border-radius: 12px;
+    font-family: 'Geist', sans-serif; font-weight: 500; font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 24px rgba(22,13,70,0.25), 0 1px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .try-app-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(22,13,70,0.35); }
+  .try-app-btn svg { transition: transform 0.2s; }
+  .try-app-btn:hover svg { transform: translateX(3px); }
+  .try-app-live {
+    margin-top: 0.9rem; font-size: 0.76rem;
+    color: var(--text-muted); font-family: 'Geist Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+  .try-app-live span { color: var(--accent2); }
+
+  /* ══════════════════════════════════
+     SIDEBAR ITEM HIGHLIGHT ANIMATIONS
+  ══════════════════════════════════ */
+  .dni-1 { animation: dniAnim1 24s linear infinite; }
+  .dni-2 { animation: dniAnim2 24s linear infinite; }
+  .dni-3 { animation: dniAnim3 24s linear infinite; }
+  .dni-4 { animation: dniAnim4 24s linear infinite; }
+  .dni-5 { animation: dniAnim5 24s linear infinite; }
+
+  @keyframes dniAnim1 {
+    0%,4%    { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+    5%,9%    { background:rgba(61,79,255,0.1); border-color:rgba(61,79,255,0.35); }
+    10%,100% { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+  }
+  @keyframes dniAnim2 {
+    0%,13%   { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+    14%,18%  { background:rgba(109,40,217,0.1); border-color:rgba(109,40,217,0.35); }
+    19%,100% { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+  }
+  @keyframes dniAnim3 {
+    0%,22%   { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+    23%,27%  { background:rgba(124,58,237,0.1); border-color:rgba(124,58,237,0.35); }
+    28%,100% { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+  }
+  @keyframes dniAnim4 {
+    0%,31%   { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+    32%,36%  { background:rgba(29,78,216,0.1); border-color:rgba(29,78,216,0.35); }
+    37%,100% { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+  }
+  @keyframes dniAnim5 {
+    0%,40%   { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+    41%,45%  { background:rgba(4,120,87,0.1); border-color:rgba(4,120,87,0.35); }
+    46%,100% { background:var(--bg3); border-color:rgba(61,79,255,0.08); }
+  }
+
+  /* ══════════════════════════════════
+     NODE ANIMATIONS  (24s loop)
+     Drop-in from left (sidebar side)
+  ══════════════════════════════════ */
+  .wn-1 { animation: wn1anim 24s linear infinite; left: 15px; top: 165px; }
+  .wn-2 { animation: wn2anim 24s linear infinite; left: 202px; top: 165px; }
+  .wn-3 { animation: wn3anim 24s linear infinite; left: 390px; top: 165px; }
+  .wn-4 { animation: wn4anim 24s linear infinite; left: 555px; top: 85px; }
+  .wn-5 { animation: wn5anim 24s linear infinite; left: 555px; top: 245px; }
+
+  /* Webhook node */
+  @keyframes wn1anim {
+    0%,7%    { opacity:0; transform:translateX(-160px); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    10%      { opacity:1; transform:translateX(0); }
+    11%      { transform:translateX(5px); }
+    12%,67%  { transform:translateX(0); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    68%,70%  { border-color:var(--accent); box-shadow:0 0 0 2px rgba(61,79,255,0.25),0 0 18px rgba(61,79,255,0.2); }
+    72%,88%  { border-color:var(--accent2); box-shadow:0 0 0 2px rgba(0,168,158,0.3); }
+    93%      { opacity:1; transform:translateX(0); }
+    96%,100% { opacity:0; transform:translateX(-160px); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+  }
+  /* Bedrock node */
+  @keyframes wn2anim {
+    0%,16%   { opacity:0; transform:translateX(-160px); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    19%      { opacity:1; transform:translateX(0); }
+    20%      { transform:translateX(5px); }
+    21%,71%  { transform:translateX(0); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    72%,80%  { border-color:#6d28d9; box-shadow:0 0 0 2px rgba(109,40,217,0.3),0 0 22px rgba(109,40,217,0.18); }
+    82%,88%  { border-color:var(--accent2); box-shadow:0 0 0 2px rgba(0,168,158,0.3); }
+    93%      { opacity:1; }
+    96%,100% { opacity:0; transform:translateX(-160px); }
+  }
+  /* IF node */
+  @keyframes wn3anim {
+    0%,24%   { opacity:0; transform:translateX(-160px); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    27%      { opacity:1; transform:translateX(0); }
+    28%      { transform:translateX(5px); }
+    29%,81%  { transform:translateX(0); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    82%,85%  { border-color:#7c3aed; box-shadow:0 0 0 2px rgba(124,58,237,0.3),0 0 18px rgba(124,58,237,0.18); }
+    87%,88%  { border-color:var(--accent2); box-shadow:0 0 0 2px rgba(0,168,158,0.3); }
+    93%      { opacity:1; }
+    96%,100% { opacity:0; transform:translateX(-160px); }
+  }
+  /* Postgres node */
+  @keyframes wn4anim {
+    0%,33%   { opacity:0; transform:translateX(-160px); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    36%      { opacity:1; transform:translateX(0); }
+    37%      { transform:translateX(5px); }
+    38%,85%  { transform:translateX(0); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    86%,88%  { border-color:#1d4ed8; box-shadow:0 0 0 2px rgba(29,78,216,0.3),0 0 16px rgba(29,78,216,0.18); }
+    89%,90%  { border-color:var(--accent2); box-shadow:0 0 0 2px rgba(0,168,158,0.3); }
+    93%      { opacity:1; }
+    96%,100% { opacity:0; transform:translateX(-160px); }
+  }
+  /* Respond node */
+  @keyframes wn5anim {
+    0%,41%   { opacity:0; transform:translateX(-160px); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    44%      { opacity:1; transform:translateX(0); }
+    45%      { transform:translateX(5px); }
+    46%,85%  { transform:translateX(0); border-color:rgba(61,79,255,0.14); box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    86%,88%  { border-color:#047857; box-shadow:0 0 0 2px rgba(4,120,87,0.3),0 0 16px rgba(4,120,87,0.18); }
+    89%,90%  { border-color:var(--accent2); box-shadow:0 0 0 2px rgba(0,168,158,0.3); }
+    93%      { opacity:1; }
+    96%,100% { opacity:0; transform:translateX(-160px); }
+  }
+
+  /* ══════════════════════════════════
+     CHECKMARKS on nodes
+  ══════════════════════════════════ */
+  .wn-1 .wf-node-check { animation: chk1 24s linear infinite; }
+  .wn-2 .wf-node-check { animation: chk2 24s linear infinite; }
+  .wn-3 .wf-node-check { animation: chk3 24s linear infinite; }
+  .wn-4 .wf-node-check { animation: chk4 24s linear infinite; }
+  .wn-5 .wf-node-check { animation: chk5 24s linear infinite; }
+
+  @keyframes chk1 { 0%,71% { opacity:0; transform:scale(0); } 73% { opacity:1; transform:scale(1.2); } 75%,90% { opacity:1; transform:scale(1); } 93%,100% { opacity:0; } }
+  @keyframes chk2 { 0%,80% { opacity:0; transform:scale(0); } 82% { opacity:1; transform:scale(1.2); } 84%,90% { opacity:1; transform:scale(1); } 93%,100% { opacity:0; } }
+  @keyframes chk3 { 0%,86% { opacity:0; transform:scale(0); } 87.5% { opacity:1; transform:scale(1.2); } 89%,90% { opacity:1; transform:scale(1); } 93%,100% { opacity:0; } }
+  @keyframes chk4 { 0%,88% { opacity:0; transform:scale(0); } 89.5% { opacity:1; transform:scale(1.2); } 91%,90% { opacity:1; transform:scale(1); } 93%,100% { opacity:0; } }
+  @keyframes chk5 { 0%,88% { opacity:0; transform:scale(0); } 89.5% { opacity:1; transform:scale(1.2); } 91%,90% { opacity:1; transform:scale(1); } 93%,100% { opacity:0; } }
+
+  /* ══════════════════════════════════
+     AI SPINNER on Bedrock node
+  ══════════════════════════════════ */
+  .wn-2 .wf-ai-ring { animation: aiRingAnim 24s linear infinite; }
+  @keyframes aiRingAnim {
+    0%,71%  { opacity:0; }
+    72%,81% { opacity:1; }
+    82%,100%{ opacity:0; }
+  }
+
+  /* ══════════════════════════════════
+     EDGE ANIMATIONS
+     Paths are in canvas-relative coords
+     (SVG origin = canvas top-left)
+  ══════════════════════════════════ */
+  /* Edge 1: Webhook → Bedrock */
+  .de-1 { animation: de1anim 24s linear infinite; stroke: var(--accent); }
+  /* Edge 2: Bedrock → IF */
+  .de-2 { animation: de2anim 24s linear infinite; stroke: var(--accent); }
+  /* Edge 3: IF → Postgres (TRUE) */
+  .de-3 { animation: de3anim 24s linear infinite; stroke: #047857; }
+  /* Edge 4: IF → Respond (FALSE) */
+  .de-4 { animation: de4anim 24s linear infinite; stroke: #dc2626; }
+
+  /* Exec flow overlays */
+  .de-1x { animation: de1xanim 24s linear infinite; stroke: var(--accent); }
+  .de-2x { animation: de2xanim 24s linear infinite; stroke: #6d28d9; }
+  .de-3x { animation: de3xanim 24s linear infinite; stroke: #047857; }
+  .de-4x { animation: de4xanim 24s linear infinite; stroke: #dc2626; }
+
+  @keyframes de1anim {
+    0%,46%  { stroke-dashoffset:300; opacity:0; }
+    47%     { stroke-dashoffset:300; opacity:0.7; }
+    51%,88% { stroke-dashoffset:0;   opacity:0.7; }
+    93%,100%{ stroke-dashoffset:300; opacity:0; }
+  }
+  @keyframes de2anim {
+    0%,51%  { stroke-dashoffset:300; opacity:0; }
+    52%     { stroke-dashoffset:300; opacity:0.7; }
+    56%,88% { stroke-dashoffset:0;   opacity:0.7; }
+    93%,100%{ stroke-dashoffset:300; opacity:0; }
+  }
+  @keyframes de3anim {
+    0%,57%  { stroke-dashoffset:300; opacity:0; }
+    58%     { stroke-dashoffset:300; opacity:0.7; }
+    62%,88% { stroke-dashoffset:0;   opacity:0.7; }
+    93%,100%{ stroke-dashoffset:300; opacity:0; }
+  }
+  @keyframes de4anim {
+    0%,62%  { stroke-dashoffset:300; opacity:0; }
+    63%     { stroke-dashoffset:300; opacity:0.7; }
+    67%,88% { stroke-dashoffset:0;   opacity:0.7; }
+    93%,100%{ stroke-dashoffset:300; opacity:0; }
+  }
+
+  /* Exec pulse dashes travel along edges during execution */
+  @keyframes de1xanim {
+    0%,68%  { stroke-dashoffset:60;  opacity:0; }
+    69%,72% { stroke-dashoffset:0;   opacity:0.9; animation-timing-function: linear; }
+    73%,100%{ stroke-dashoffset:-60; opacity:0; }
+  }
+  @keyframes de2xanim {
+    0%,72%  { stroke-dashoffset:60;  opacity:0; }
+    73%,80% { stroke-dashoffset:0;   opacity:0.9; animation-timing-function: linear; }
+    81%,100%{ stroke-dashoffset:-60; opacity:0; }
+  }
+  @keyframes de3xanim {
+    0%,82%  { stroke-dashoffset:60;  opacity:0; }
+    83%,86% { stroke-dashoffset:0;   opacity:0.9; animation-timing-function: linear; }
+    87%,100%{ stroke-dashoffset:-60; opacity:0; }
+  }
+  @keyframes de4xanim {
+    0%,82%  { stroke-dashoffset:60;  opacity:0; }
+    83%,86% { stroke-dashoffset:0;   opacity:0.9; animation-timing-function: linear; }
+    87%,100%{ stroke-dashoffset:-60; opacity:0; }
+  }
+
+  /* ══════════════════════════════════
+     BRANCH LABELS
+  ══════════════════════════════════ */
+  .bl-true  { left: 598px; top: 63px;  animation: branchLabelAnim 24s linear infinite; }
+  .bl-false { left: 598px; top: 225px; animation: branchLabelAnim 24s linear infinite; animation-delay: 0.3s; }
+  @keyframes branchLabelAnim {
+    0%,62%  { opacity:0; }
+    65%,88% { opacity:1; }
+    93%,100%{ opacity:0; }
+  }
+
+  /* ══════════════════════════════════
+     HINT LABELS
+  ══════════════════════════════════ */
+  .dh-1 { animation: dh1anim 24s linear infinite; }
+  .dh-2 { animation: dh2anim 24s linear infinite; }
+  .dh-3 { animation: dh3anim 24s linear infinite; }
+  .dh-4 { animation: dh4anim 24s linear infinite; }
+  .dh-5 { animation: dh5anim 24s linear infinite; }
+
+  @keyframes dh1anim { 0%,3%  {opacity:0;transform:translateX(-50%) translateY(6px);} 5%,44% {opacity:1;transform:translateX(-50%) translateY(0);} 46%,100%{opacity:0;transform:translateX(-50%) translateY(6px);} }
+  @keyframes dh2anim { 0%,46% {opacity:0;transform:translateX(-50%) translateY(6px);} 48%,65%{opacity:1;transform:translateX(-50%) translateY(0);} 67%,100%{opacity:0;transform:translateX(-50%) translateY(6px);} }
+  @keyframes dh3anim { 0%,65% {opacity:0;transform:translateX(-50%) translateY(6px);} 67%,70%{opacity:1;transform:translateX(-50%) translateY(0);} 72%,100%{opacity:0;transform:translateX(-50%) translateY(6px);} }
+  @keyframes dh4anim { 0%,70% {opacity:0;transform:translateX(-50%) translateY(6px);} 72%,88%{opacity:1;transform:translateX(-50%) translateY(0);} 92%,100%{opacity:0;transform:translateX(-50%) translateY(6px);} }
+  @keyframes dh5anim { 0%,88% {opacity:0;transform:translateX(-50%) translateY(6px);} 90%,93%{opacity:1;transform:translateX(-50%) translateY(0);} 95%,100%{opacity:0;transform:translateX(-50%) translateY(6px);} }
+
+  /* ══════════════════════════════════
+     CURSOR MOVEMENT  (24s = 100%)
+     Cursor is in .editor-body space
+     Sidebar = 172px, canvas starts at 172px
+     Cursor div: position:absolute in .editor-body
+  ══════════════════════════════════ */
+  @keyframes cursorMove {
+    /* ─── PHASE 1: DRAG NODES (0-47%) ─── */
+    /* hover webhook sidebar */
+    0%    { transform:translate(80px, 80px);  opacity:0; }
+    3%    { transform:translate(80px, 80px);  opacity:1; }
+    6%    { transform:translate(80px, 80px); }
+    /* drag to canvas n1 */
+    9%    { transform:translate(258px, 183px); }
+    12%   { transform:translate(258px, 183px); }
+    /* back to Bedrock sidebar */
+    14%   { transform:translate(80px, 122px); }
+    16%   { transform:translate(80px, 122px); }
+    /* drag to canvas n2 */
+    19%   { transform:translate(447px, 183px); }
+    22%   { transform:translate(447px, 183px); }
+    /* back to IF sidebar */
+    23%   { transform:translate(80px, 164px); }
+    25%   { transform:translate(80px, 164px); }
+    /* drag to canvas n3 */
+    28%   { transform:translate(636px, 183px); }
+    31%   { transform:translate(636px, 183px); }
+    /* back to Postgres sidebar */
+    32%   { transform:translate(80px, 206px); }
+    34%   { transform:translate(80px, 206px); }
+    /* drag to canvas n4 */
+    37%   { transform:translate(805px, 103px); }
+    40%   { transform:translate(805px, 103px); }
+    /* back to Respond sidebar */
+    41%   { transform:translate(80px, 248px); }
+    43%   { transform:translate(80px, 248px); }
+    /* drag to canvas n5 */
+    46%   { transform:translate(805px, 263px); }
+    48%   { transform:translate(805px, 263px); }
+
+    /* ─── PHASE 2: CONNECT (48-67%) ─── */
+    /* move to n1 right handle */
+    49%   { transform:translate(337px, 194px); }
+    /* drag to n2 left handle — edge 1 draws */
+    51%   { transform:translate(368px, 194px); }
+    /* move to n2 right handle */
+    52%   { transform:translate(522px, 194px); }
+    /* drag to n3 left — edge 2 draws */
+    54%   { transform:translate(556px, 194px); }
+    /* move to n3 right (true branch handle) */
+    55%   { transform:translate(707px, 181px); }
+    /* drag up to n4 left — edge 3 draws */
+    58%   { transform:translate(723px, 103px); }
+    /* back to n3 right (false branch) */
+    59%   { transform:translate(707px, 208px); }
+    /* drag down to n5 left — edge 4 draws */
+    62%   { transform:translate(723px, 263px); }
+
+    /* ─── PHASE 3: RUN (63-70%) ─── */
+    /* move to Run button (top-right of canvas: 830, 18 in editor-body) */
+    64%   { transform:translate(820px, 18px); }
+    68%   { transform:translate(820px, 18px); }
+
+    /* ─── PHASE 4: EXECUTION + SUCCESS (68-92%) ─── */
+    70%   { transform:translate(820px, 18px); opacity:1; }
+    90%   { transform:translate(820px, 18px); opacity:1; }
+    94%   { transform:translate(80px, 80px);  opacity:0; }
+    100%  { transform:translate(80px, 80px);  opacity:0; }
+  }
+
+  /* Phase indicator animations */
+  .ph-1 { animation: phAnim1 24s linear infinite; }
+  .ph-2 { animation: phAnim2 24s linear infinite; }
+  .ph-3 { animation: phAnim3 24s linear infinite; }
+  .ph-4 { animation: phAnim4 24s linear infinite; }
+  @keyframes phAnim1 { 0%,44%{color:var(--accent);background:rgba(61,79,255,0.08);border-color:rgba(61,79,255,0.3);opacity:1;} 45%,100%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} }
+  @keyframes phAnim2 { 0%,44%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} 45%,65%{color:var(--accent);background:rgba(61,79,255,0.08);border-color:rgba(61,79,255,0.3);opacity:1;} 66%,100%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} }
+  @keyframes phAnim3 { 0%,65%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} 66%,70%{color:var(--accent);background:rgba(61,79,255,0.08);border-color:rgba(61,79,255,0.3);opacity:1;} 71%,100%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} }
+  @keyframes phAnim4 { 0%,70%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} 71%,90%{color:var(--accent);background:rgba(61,79,255,0.08);border-color:rgba(61,79,255,0.3);opacity:1;} 91%,100%{color:var(--text-muted);background:transparent;border-color:rgba(61,79,255,0.15);opacity:0.45;} }
+
+  /* ══════════════════════════════════
+     AI FEATURES SECTION
+  ══════════════════════════════════ */
+  .ai-features-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.8rem; margin-top: 3rem;
+  }
+  .ai-feat-card {
+    padding: 2rem; display: flex; flex-direction: column; gap: 1rem;
+  }
+  .ai-feat-label { margin-bottom: 0.2rem; }
+  .ai-feat-tag {
+    font-family: 'Geist Mono', monospace; font-size: 0.7rem;
+    letter-spacing: 0.1em; padding: 0.25rem 0.75rem; border-radius: 20px;
+  }
+  .ai-feat-title {
+    font-family: 'Fraunces', serif; font-weight: 800;
+    font-size: 1.5rem; line-height: 1.15; color: var(--primary);
+  }
+  .ai-feat-desc {
+    font-size: 0.88rem; color: var(--text-muted); line-height: 1.65;
+  }
+
+  /* Mock UI panel */
+  .ai-mock-ui {
+    background: var(--bg2); border: 1px solid rgba(61,79,255,0.14);
+    border-radius: 12px; padding: 1rem 1.1rem;
+    font-size: 0.78rem; flex: 1;
+  }
+  .ai-mock-header {
+    display: flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 0.8rem; padding-bottom: 0.7rem;
+    border-bottom: 1px solid rgba(61,79,255,0.08);
+  }
+  .ai-mock-icon {
+    width: 30px; height: 30px; border-radius: 8px;
+    background: rgba(61,79,255,0.1); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; flex-shrink: 0;
+  }
+  .ai-mock-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.82rem; color: var(--primary); }
+  .ai-mock-sub { font-family: 'Geist Mono', monospace; font-size: 0.62rem; color: var(--text-muted); }
+  .ai-mock-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.65rem; }
+  .ai-chip-ex {
+    font-family: 'Geist Mono', monospace; font-size: 0.62rem;
+    background: var(--bg3); border: 1px solid rgba(61,79,255,0.14);
+    color: var(--accent); padding: 0.18rem 0.55rem; border-radius: 4px;
+  }
+  .ai-mock-textarea {
+    background: var(--bg3); border: 1px solid rgba(61,79,255,0.14);
+    border-radius: 8px; padding: 0.6rem 0.75rem;
+    font-family: 'Geist', sans-serif; font-size: 0.78rem; color: var(--text);
+    line-height: 1.55; margin-bottom: 0.6rem; min-height: 62px;
+  }
+  .ai-mock-footer {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .ai-mock-hint {
+    font-family: 'Geist Mono', monospace; font-size: 0.6rem; color: var(--text-muted);
+  }
+  .ai-mock-btn {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: linear-gradient(135deg, var(--accent), #5c6fff);
+    color: white; padding: 0.3rem 0.9rem; border-radius: 6px;
+    font-family: 'Geist Mono', monospace; font-size: 0.7rem;
+    letter-spacing: 0.06em; cursor: default;
+  }
+  .ai-stars-icon { font-size: 0.72rem; }
+
+  /* Cursor blink */
+  .ai-cursor-blink {
+    display: inline-block; width: 1px; background: var(--accent);
+    color: transparent; margin-left: 1px;
+    animation: cursorBlink 1s step-end infinite;
+  }
+  @keyframes cursorBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+  /* Generated preview banner */
+  .ai-gen-preview {
+    display: flex; align-items: center; gap: 0.7rem;
+    background: rgba(0,168,158,0.07); border: 1px solid rgba(0,168,158,0.22);
+    border-radius: 8px; padding: 0.65rem 0.9rem;
+  }
+  .ai-gen-check {
+    width: 22px; height: 22px; border-radius: 50%; background: var(--accent2);
+    color: white; font-size: 0.72rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .ai-gen-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.85rem; color: var(--primary); }
+  .ai-gen-desc { font-family: 'Geist Mono', monospace; font-size: 0.62rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+  /* Test case specific */
+  .ai-tc-field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .ai-tc-label { font-family: 'Geist Mono', monospace; font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.08em; }
+  .ai-tc-row { display: flex; gap: 0.5rem; align-items: stretch; }
+  .ai-tc-input {
+    flex: 1; background: var(--bg3); border: 1px solid rgba(109,40,217,0.18);
+    border-radius: 7px; padding: 0.45rem 0.7rem;
+    font-size: 0.76rem; color: var(--text); font-family: 'Geist', sans-serif;
+  }
+  .ai-tc-payload {
+    background: var(--bg3); border: 1px solid rgba(109,40,217,0.14);
+    border-radius: 8px; padding: 0.6rem 0.75rem;
+    font-family: 'Geist Mono', monospace; font-size: 0.7rem;
+    line-height: 1.7; color: var(--text);
+  }
+
+  /* API badge */
+  .ai-feat-api {
+    display: flex; align-items: center; gap: 0.5rem;
+    margin-top: auto; padding-top: 0.5rem;
+  }
+  .ai-api-badge {
+    font-family: 'Geist Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em;
+    padding: 0.15rem 0.5rem; border-radius: 4px;
+    background: rgba(61,79,255,0.1); color: var(--accent);
+    border: 1px solid rgba(61,79,255,0.25);
+  }
+  .ai-feat-api code {
+    font-family: 'Geist Mono', monospace; font-size: 0.72rem; color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .ai-features-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .editor-demo { height: 360px; }
+    .demo-sidebar { width: 140px; }
+    .wn-1 { left:12px; top:135px; } .wn-2 { left:170px; top:135px; }
+    .wn-3 { left:328px; top:135px; } .wn-4 { left:460px; top:65px; }
+    .wn-5 { left:460px; top:205px; }
+    .editor-demo { overflow-x: auto; }
+  }
   @media (max-width: 768px) {
     .what-grid, .nodes-grid { grid-template-columns: 1fr 1fr; }
     .roles-grid, .security-grid { grid-template-columns: 1fr; }
     .arch-diagram { grid-template-columns: 1fr; }
     .arch-arrow { transform: rotate(90deg); }
     .nav-links { display: none; }
+    .demo-phase-bar { display: none; }
   }
   @media (max-width: 480px) {
     .what-grid, .nodes-grid { grid-template-columns: 1fr; }
@@ -461,7 +926,9 @@
 <body>
 
 <nav>
-  <div class="nav-logo" style="display:flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318.62 77.19" style="height:28px;width:auto;color:#160d46"><g><path d="M79.36,54.74c0,12.29-9.93,22.3-22.18,22.44h0s-.6,0-.6,0c-1.36-.01-9.3-.06-54.88-.06H0v-6.12c0-3.59,2.92-6.51,6.51-6.51h51.19c5.03-.38,8.99-4.66,8.99-9.74,0-5.39-4.38-9.77-9.77-9.77l-8.6-.05c-4.63-.02-6.99-.02-8.25-.11v.07H6.51c-3.59,0-6.51-2.92-6.51-6.51v-6.12l52.75-.04c5.39,0,9.77-4.38,9.77-9.77s-4.38-9.77-9.77-9.77l-46.24-.03c-3.59,0-6.51-2.92-6.51-6.51V.01h52.06c.19,0,.44-.01.69-.01,12.37,0,22.44,10.07,22.44,22.44,0,5.17-1.79,10.19-5.05,14.17,5.78,4.23,9.22,10.98,9.22,18.13Z" fill="currentColor"/><path d="M158.17.01h1.71v6.12c0,3.59-2.92,6.51-6.51,6.51h-27.11c-14.29,0-25.92,11.63-25.92,25.92s11.63,25.92,25.92,25.92h27.11c3.59,0,6.51,2.92,6.51,6.51v6.12h-1.71c-25,0-30.41,0-31.57,0h0s-.33,0-.33,0h-.33s0,0,0,0l-1.06-.02c-20.85-.74-37.19-17.67-37.19-38.54S103.85.94,124.54.04h0s.34-.04.34-.04h1.71c1.17,0,6.57.01,31.57.01Z" fill="currentColor"/><path d="M237.41,38.56c0,21.26-17.3,38.56-38.56,38.56s-38.56-17.3-38.56-38.56S177.58,0,198.84,0s38.56,17.3,38.56,38.56ZM224.76,38.56c0-14.29-11.63-25.92-25.92-25.92s-25.92,11.63-25.92,25.92,11.63,25.92,25.92,25.92,25.92-11.63,25.92-25.92Z" fill="currentColor"/><path d="M312.12.01h6.5v77.1h-13.82l-.1-.14-42.95-57.87v19.25c0,3.59-2.92,6.51-6.51,6.51h-6.5V.01h13.78l.1.14,42.99,57.93V6.52c0-3.59,2.92-6.51,6.51-6.51Z" fill="currentColor"/></g></svg></div>
+  <div class="nav-logo" style="display:flex;align-items:center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318.62 77.19" style="height:28px;width:auto;color:#160d46"><g><path d="M79.36,54.74c0,12.29-9.93,22.3-22.18,22.44h0s-.6,0-.6,0c-1.36-.01-9.3-.06-54.88-.06H0v-6.12c0-3.59,2.92-6.51,6.51-6.51h51.19c5.03-.38,8.99-4.66,8.99-9.74,0-5.39-4.38-9.77-9.77-9.77l-8.6-.05c-4.63-.02-6.99-.02-8.25-.11v.07H6.51c-3.59,0-6.51-2.92-6.51-6.51v-6.12l52.75-.04c5.39,0,9.77-4.38,9.77-9.77s-4.38-9.77-9.77-9.77l-46.24-.03c-3.59,0-6.51-2.92-6.51-6.51V.01h52.06c.19,0,.44-.01.69-.01,12.37,0,22.44,10.07,22.44,22.44,0,5.17-1.79,10.19-5.05,14.17,5.78,4.23,9.22,10.98,9.22,18.13Z" fill="currentColor"/><path d="M158.17.01h1.71v6.12c0,3.59-2.92,6.51-6.51,6.51h-27.11c-14.29,0-25.92,11.63-25.92,25.92s11.63,25.92,25.92,25.92h27.11c3.59,0,6.51,2.92,6.51,6.51v6.12h-1.71c-25,0-30.41,0-31.57,0h0s-.33,0-.33,0h-.33s0,0,0,0l-1.06-.02c-20.85-.74-37.19-17.67-37.19-38.54S103.85.94,124.54.04h0s.34-.04.34-.04h1.71c1.17,0,6.57.01,31.57.01Z" fill="currentColor"/><path d="M237.41,38.56c0,21.26-17.3,38.56-38.56,38.56s-38.56-17.3-38.56-38.56S177.58,0,198.84,0s38.56,17.3,38.56,38.56ZM224.76,38.56c0-14.29-11.63-25.92-25.92-25.92s-25.92,11.63-25.92,25.92,11.63,25.92,25.92,25.92,25.92-11.63,25.92-25.92Z" fill="currentColor"/><path d="M312.12.01h6.5v77.1h-13.82l-.1-.14-42.95-57.87v19.25c0,3.59-2.92,6.51-6.51,6.51h-6.5V.01h13.78l.1.14,42.99,57.93V6.52c0-3.59,2.92-6.51,6.51-6.51Z" fill="currentColor"/></g></svg>
+  </div>
   <ul class="nav-links">
     <li><a href="#what">Platform</a></li>
     <li><a href="#nodes">Nodes</a></li>
@@ -479,34 +946,15 @@
   <div style="margin-bottom:2rem;animation:fadeSlideUp 0.8s 0.1s ease both">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318.62 77.19" style="height:64px;width:auto;color:#160d46"><g><path d="M79.36,54.74c0,12.29-9.93,22.3-22.18,22.44h0s-.6,0-.6,0c-1.36-.01-9.3-.06-54.88-.06H0v-6.12c0-3.59,2.92-6.51,6.51-6.51h51.19c5.03-.38,8.99-4.66,8.99-9.74,0-5.39-4.38-9.77-9.77-9.77l-8.6-.05c-4.63-.02-6.99-.02-8.25-.11v.07H6.51c-3.59,0-6.51-2.92-6.51-6.51v-6.12l52.75-.04c5.39,0,9.77-4.38,9.77-9.77s-4.38-9.77-9.77-9.77l-46.24-.03c-3.59,0-6.51-2.92-6.51-6.51V.01h52.06c.19,0,.44-.01.69-.01,12.37,0,22.44,10.07,22.44,22.44,0,5.17-1.79,10.19-5.05,14.17,5.78,4.23,9.22,10.98,9.22,18.13Z" fill="currentColor"/><path d="M158.17.01h1.71v6.12c0,3.59-2.92,6.51-6.51,6.51h-27.11c-14.29,0-25.92,11.63-25.92,25.92s11.63,25.92,25.92,25.92h27.11c3.59,0,6.51,2.92,6.51,6.51v6.12h-1.71c-25,0-30.41,0-31.57,0h0s-.33,0-.33,0h-.33s0,0,0,0l-1.06-.02c-20.85-.74-37.19-17.67-37.19-38.54S103.85.94,124.54.04h0s.34-.04.34-.04h1.71c1.17,0,6.57.01,31.57.01Z" fill="currentColor"/><path d="M237.41,38.56c0,21.26-17.3,38.56-38.56,38.56s-38.56-17.3-38.56-38.56S177.58,0,198.84,0s38.56,17.3,38.56,38.56ZM224.76,38.56c0-14.29-11.63-25.92-25.92-25.92s-25.92,11.63-25.92,25.92,11.63,25.92,25.92,25.92,25.92-11.63,25.92-25.92Z" fill="currentColor"/><path d="M312.12.01h6.5v77.1h-13.82l-.1-.14-42.95-57.87v19.25c0,3.59-2.92,6.51-6.51,6.51h-6.5V.01h13.78l.1.14,42.99,57.93V6.52c0-3.59,2.92-6.51,6.51-6.51Z" fill="currentColor"/></g></svg>
   </div>
-  <h1 class="hero-title">
-    Build.<br>
-    <span class="accent-word">Automate.</span><br>
-    Scale.
-  </h1>
+  <h1 class="hero-title">Build.<br><span class="accent-word">Automate.</span><br>Scale.</h1>
   <p class="hero-sub">BCON is an enterprise-grade visual workflow platform that connects your services, data, and AI — no code required.</p>
   <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">13+</div>
-      <div class="stat-label">Node Types</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">Workflows</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">AWS</div>
-      <div class="stat-label">Powered</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">RT</div>
-      <div class="stat-label">Execution</div>
-    </div>
+    <div class="stat"><div class="stat-num">13+</div><div class="stat-label">Node Types</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Workflows</div></div>
+    <div class="stat"><div class="stat-num">AWS</div><div class="stat-label">Powered</div></div>
+    <div class="stat"><div class="stat-num">RT</div><div class="stat-label">Execution</div></div>
   </div>
-  <div class="scroll-cue">
-    <span>Explore</span>
-    <div class="scroll-cue-line"></div>
-  </div>
+  <div class="scroll-cue"><span>Explore</span><div class="scroll-cue-line"></div></div>
 </div>
 
 <div class="divider"></div>
@@ -518,36 +966,12 @@
     <h2 class="section-title">Everything your<br>team needs to automate</h2>
     <p class="section-desc">A visual, node-based editor that lets your teams build, run, and monitor automated workflows connected to any service.</p>
     <div class="what-grid">
-      <div class="what-card" data-delay="0">
-        <div class="card-icon" style="background:rgba(92,111,255,0.12)">⚡</div>
-        <div class="card-title">Visual Editor</div>
-        <div class="card-desc">Drag-and-drop node canvas with real-time execution feedback, presence awareness, and live socket events.</div>
-      </div>
-      <div class="what-card" data-delay="100">
-        <div class="card-icon" style="background:rgba(0,212,200,0.12)">🔗</div>
-        <div class="card-title">Deep Integrations</div>
-        <div class="card-desc">AWS S3, Lambda, Bedrock AI, PostgreSQL, any HTTP API, and custom JavaScript — all in one workflow.</div>
-      </div>
-      <div class="what-card" data-delay="200">
-        <div class="card-icon" style="background:rgba(168,85,247,0.12)">🏢</div>
-        <div class="card-title">Multi-Tenant</div>
-        <div class="card-desc">Full org → workspace → project hierarchy with role-based access control and data isolation per organisation.</div>
-      </div>
-      <div class="what-card" data-delay="300">
-        <div class="card-icon" style="background:rgba(245,166,35,0.12)">🤖</div>
-        <div class="card-title">AI-Ready</div>
-        <div class="card-desc">AWS Bedrock integration with Claude, Llama, Mistral and more. Structured JSON output via tool-use mode.</div>
-      </div>
-      <div class="what-card" data-delay="400">
-        <div class="card-icon" style="background:rgba(16,185,129,0.12)">📊</div>
-        <div class="card-title">Execution History</div>
-        <div class="card-desc">Every workflow run is recorded with node-level results, logs, timing, and real-time socket streaming.</div>
-      </div>
-      <div class="what-card" data-delay="500">
-        <div class="card-icon" style="background:rgba(239,68,68,0.12)">🔒</div>
-        <div class="card-title">Enterprise Security</div>
-        <div class="card-desc">AWS Cognito identity, AES-256 encrypted credentials, row-level org isolation, and full audit logs.</div>
-      </div>
+      <div class="what-card" data-delay="0"><div class="card-icon" style="background:rgba(92,111,255,0.12)">⚡</div><div class="card-title">Visual Editor</div><div class="card-desc">Drag-and-drop node canvas with real-time execution feedback, presence awareness, and live socket events.</div></div>
+      <div class="what-card" data-delay="100"><div class="card-icon" style="background:rgba(0,212,200,0.12)">🔗</div><div class="card-title">Deep Integrations</div><div class="card-desc">AWS S3, Lambda, Bedrock AI, PostgreSQL, any HTTP API, and custom JavaScript — all in one workflow.</div></div>
+      <div class="what-card" data-delay="200"><div class="card-icon" style="background:rgba(168,85,247,0.12)">🏢</div><div class="card-title">Multi-Tenant</div><div class="card-desc">Full org → workspace → project hierarchy with role-based access control and data isolation per organisation.</div></div>
+      <div class="what-card" data-delay="300"><div class="card-icon" style="background:rgba(245,166,35,0.12)">🤖</div><div class="card-title">AI-Ready</div><div class="card-desc">AWS Bedrock integration with Claude, Llama, Mistral and more. Structured JSON output via tool-use mode.</div></div>
+      <div class="what-card" data-delay="400"><div class="card-icon" style="background:rgba(16,185,129,0.12)">📊</div><div class="card-title">Execution History</div><div class="card-desc">Every workflow run is recorded with node-level results, logs, timing, and real-time socket streaming.</div></div>
+      <div class="what-card" data-delay="500"><div class="card-icon" style="background:rgba(239,68,68,0.12)">🔒</div><div class="card-title">Enterprise Security</div><div class="card-desc">AWS Cognito identity, AES-256 encrypted credentials, row-level org isolation, and full audit logs.</div></div>
     </div>
   </div>
 </section>
@@ -570,26 +994,17 @@
         <div class="arch-item"><div class="arch-item-dot"></div> Lazy-loaded Routes</div>
         <div class="arch-item"><div class="arch-item-dot"></div> React Flow Canvas</div>
       </div>
-      <div class="arch-arrow">
-        <div class="arch-arrow-line"></div>
-        <div style="font-size:0.6rem;opacity:0.5;margin-top:0.4rem">HTTP / WS</div>
-      </div>
+      <div class="arch-arrow"><div class="arch-arrow-line"></div><div style="font-size:0.6rem;opacity:0.5;margin-top:0.4rem">HTTP / WS</div></div>
       <div class="arch-center">
         <div class="arch-center-title">BCON</div>
         <div class="arch-center-sub">NestJS + PostgreSQL</div>
         <div class="arch-badges">
-          <span class="arch-badge">JWT Auth</span>
-          <span class="arch-badge">Cognito</span>
-          <span class="arch-badge">TypeORM</span>
-          <span class="arch-badge">Socket.io</span>
-          <span class="arch-badge">isolated-vm</span>
-          <span class="arch-badge">PM2</span>
+          <span class="arch-badge">JWT Auth</span><span class="arch-badge">Cognito</span>
+          <span class="arch-badge">TypeORM</span><span class="arch-badge">Socket.io</span>
+          <span class="arch-badge">isolated-vm</span><span class="arch-badge">PM2</span>
         </div>
       </div>
-      <div class="arch-arrow" style="transform:rotate(180deg)">
-        <div class="arch-arrow-line"></div>
-        <div style="font-size:0.6rem;opacity:0.5;margin-top:0.4rem;transform:rotate(180deg)">AWS SDK</div>
-      </div>
+      <div class="arch-arrow" style="transform:rotate(180deg)"><div class="arch-arrow-line"></div><div style="font-size:0.6rem;opacity:0.5;margin-top:0.4rem;transform:rotate(180deg)">AWS SDK</div></div>
       <div class="arch-box">
         <div class="arch-box-title"><div class="arch-dot green"></div> AWS Services</div>
         <div class="arch-item"><div class="arch-item-dot"></div> Cognito (Identity)</div>
@@ -607,205 +1022,381 @@
   <div class="section-inner">
     <div class="section-tag">// node library</div>
     <div class="nodes-header">
-      <div>
-        <h2 class="section-title">A growing library<br>of node types</h2>
-        <p class="section-desc">Connect any service. Process any data. Control any flow.</p>
-      </div>
+      <div><h2 class="section-title">A growing library<br>of node types</h2><p class="section-desc">Connect any service. Process any data. Control any flow.</p></div>
     </div>
     <div class="nodes-grid" id="nodes-grid">
-
-      <!-- Triggers -->
-      <div class="node-card" data-delay="0" style="border-color:rgba(92,111,255,0.2)">
-        <div class="node-card-color" style="background:rgba(92,111,255,0.15)">🔗</div>
-        <div class="node-card-type" style="color:var(--node-webhook)">Trigger</div>
-        <div class="node-card-name">Webhook</div>
-        <div class="node-card-desc">Start workflows from any HTTP request. Supports GET/POST/PUT/PATCH/DELETE with auth, custom paths, and three response modes.</div>
-        <span class="node-card-pill" style="background:rgba(92,111,255,0.1);color:var(--node-webhook);border:1px solid rgba(92,111,255,0.2)">HTTP Trigger</span>
-      </div>
-
-      <div class="node-card" data-delay="80" style="border-color:rgba(59,130,246,0.2)">
-        <div class="node-card-color" style="background:rgba(59,130,246,0.15)">🐘</div>
-        <div class="node-card-type" style="color:var(--node-postgres)">Trigger</div>
-        <div class="node-card-name">PostgreSQL Trigger</div>
-        <div class="node-card-desc">Fire workflows on INSERT, UPDATE, or DELETE events in any PostgreSQL table using native LISTEN/NOTIFY.</div>
-        <span class="node-card-pill" style="background:rgba(59,130,246,0.1);color:var(--node-postgres);border:1px solid rgba(59,130,246,0.2)">DB Event</span>
-      </div>
-
-      <!-- Core -->
-      <div class="node-card" data-delay="160" style="border-color:rgba(0,212,200,0.2)">
-        <div class="node-card-color" style="background:rgba(0,212,200,0.15)">🌐</div>
-        <div class="node-card-type" style="color:var(--node-http)">Core</div>
-        <div class="node-card-name">HTTP Request</div>
-        <div class="node-card-desc">Call any external REST API. Full support for auth (Basic, Bearer, API Key, OAuth2), headers, query params, and JSON/form bodies.</div>
-        <span class="node-card-pill" style="background:rgba(0,212,200,0.1);color:var(--node-http);border:1px solid rgba(0,212,200,0.2)">Outbound HTTP</span>
-      </div>
-
-      <div class="node-card" data-delay="240" style="border-color:rgba(245,166,35,0.2)">
-        <div class="node-card-color" style="background:rgba(245,166,35,0.15)">💻</div>
-        <div class="node-card-type" style="color:var(--node-code)">Core</div>
-        <div class="node-card-name">Code</div>
-        <div class="node-card-desc">Run custom JavaScript in an isolated V8 sandbox. Full async/await support, fetch API available. 5s timeout, 64MB limit.</div>
-        <span class="node-card-pill" style="background:rgba(245,166,35,0.1);color:var(--node-code);border:1px solid rgba(245,166,35,0.2)">Sandbox VM</span>
-      </div>
-
-      <div class="node-card" data-delay="320" style="border-color:rgba(16,185,129,0.2)">
-        <div class="node-card-color" style="background:rgba(16,185,129,0.15)">📤</div>
-        <div class="node-card-type" style="color:var(--node-respond)">Terminal</div>
-        <div class="node-card-name">Respond to Webhook</div>
-        <div class="node-card-desc">Send a custom HTTP response back to the webhook caller with full control over status code, headers, and response body.</div>
-        <span class="node-card-pill" style="background:rgba(16,185,129,0.1);color:var(--node-respond);border:1px solid rgba(16,185,129,0.2)">HTTP Response</span>
-      </div>
-
-      <div class="node-card" data-delay="400" style="border-color:rgba(239,68,68,0.2)">
-        <div class="node-card-color" style="background:rgba(239,68,68,0.15)">🛑</div>
-        <div class="node-card-type" style="color:var(--node-error)">Terminal</div>
-        <div class="node-card-name">Error / Stop</div>
-        <div class="node-card-desc">Halt workflow execution intentionally with a plain message or structured JSON payload. Sets execution status to Stopped.</div>
-        <span class="node-card-pill" style="background:rgba(239,68,68,0.1);color:var(--node-error);border:1px solid rgba(239,68,68,0.2)">Guard Clause</span>
-      </div>
-
-      <!-- Flow Control -->
-      <div class="node-card" data-delay="80" style="border-color:rgba(168,85,247,0.2)">
-        <div class="node-card-color" style="background:rgba(168,85,247,0.15)">🔀</div>
-        <div class="node-card-type" style="color:var(--node-if)">Flow Control</div>
-        <div class="node-card-name">IF</div>
-        <div class="node-card-desc">Evaluate conditions (equals, contains, greater than, isEmpty, isTrue…) with AND logic and branch to True or False paths.</div>
-        <span class="node-card-pill" style="background:rgba(168,85,247,0.1);color:var(--node-if);border:1px solid rgba(168,85,247,0.2)">Conditional</span>
-      </div>
-
-      <div class="node-card" data-delay="160" style="border-color:rgba(236,72,153,0.2)">
-        <div class="node-card-color" style="background:rgba(236,72,153,0.15)">🎛</div>
-        <div class="node-card-type" style="color:var(--node-switch)">Flow Control</div>
-        <div class="node-card-name">Switch</div>
-        <div class="node-card-desc">Multi-case routing based on a variable's value. Each case becomes its own branch. Default branch handles unmatched cases.</div>
-        <span class="node-card-pill" style="background:rgba(236,72,153,0.1);color:var(--node-switch);border:1px solid rgba(236,72,153,0.2)">Multi-Branch</span>
-      </div>
-
-      <!-- AWS -->
-      <div class="node-card" data-delay="240" style="border-color:rgba(245,158,11,0.2)">
-        <div class="node-card-color" style="background:rgba(245,158,11,0.15)">🪣</div>
-        <div class="node-card-type" style="color:var(--node-s3)">AWS</div>
-        <div class="node-card-name">AWS S3</div>
-        <div class="node-card-desc">Full bucket and file management: upload, download, copy, delete files and folders. All fields support {{expressions}}.</div>
-        <span class="node-card-pill" style="background:rgba(245,158,11,0.1);color:var(--node-s3);border:1px solid rgba(245,158,11,0.2)">Object Storage</span>
-      </div>
-
-      <div class="node-card" data-delay="320" style="border-color:rgba(249,115,22,0.2)">
-        <div class="node-card-color" style="background:rgba(249,115,22,0.15)">λ</div>
-        <div class="node-card-type" style="color:var(--node-lambda)">AWS</div>
-        <div class="node-card-name">AWS Lambda</div>
-        <div class="node-card-desc">Invoke any Lambda function synchronously with a JSON payload. Results flow directly into the next node.</div>
-        <span class="node-card-pill" style="background:rgba(249,115,22,0.1);color:var(--node-lambda);border:1px solid rgba(249,115,22,0.2)">Serverless</span>
-      </div>
-
-      <div class="node-card" data-delay="400" style="border-color:rgba(139,92,246,0.2)">
-        <div class="node-card-color" style="background:rgba(139,92,246,0.15)">🧠</div>
-        <div class="node-card-type" style="color:var(--node-bedrock)">AWS</div>
-        <div class="node-card-name">AWS Bedrock</div>
-        <div class="node-card-desc">Generate text or structured JSON with Claude, Llama, Mistral, Cohere, and Titan. Parse Output mode enforces JSON schemas.</div>
-        <span class="node-card-pill" style="background:rgba(139,92,246,0.1);color:var(--node-bedrock);border:1px solid rgba(139,92,246,0.2)">Foundation Models</span>
-      </div>
-
-      <!-- Database + Extraction -->
-      <div class="node-card" data-delay="80" style="border-color:rgba(59,130,246,0.2)">
-        <div class="node-card-color" style="background:rgba(59,130,246,0.15)">🗄</div>
-        <div class="node-card-type" style="color:var(--node-postgres)">Database</div>
-        <div class="node-card-name">PostgreSQL Action</div>
-        <div class="node-card-desc">SELECT, INSERT, UPDATE, DELETE, UPSERT, or raw SQL. Schema/table autocomplete. Expression syntax in WHERE clauses and row data.</div>
-        <span class="node-card-pill" style="background:rgba(59,130,246,0.1);color:var(--node-postgres);border:1px solid rgba(59,130,246,0.2)">CRUD + SQL</span>
-      </div>
-
-      <div class="node-card" data-delay="160" style="border-color:rgba(6,182,212,0.2)">
-        <div class="node-card-color" style="background:rgba(6,182,212,0.15)">📄</div>
-        <div class="node-card-type" style="color:var(--node-extract)">Processing</div>
-        <div class="node-card-name">Extraction</div>
-        <div class="node-card-desc">Parse file buffers from upstream nodes: PDF, CSV, JSON, XML, XLS, XLSX, and Base64. JSONPath and page range support.</div>
-        <span class="node-card-pill" style="background:rgba(6,182,212,0.1);color:var(--node-extract);border:1px solid rgba(6,182,212,0.2)">PDF / CSV / JSON…</span>
-      </div>
-
+      <div class="node-card" data-delay="0" style="border-color:rgba(92,111,255,0.2)"><div class="node-card-color" style="background:rgba(92,111,255,0.15)">🔗</div><div class="node-card-type" style="color:var(--node-webhook)">Trigger</div><div class="node-card-name">Webhook</div><div class="node-card-desc">Start workflows from any HTTP request. Supports GET/POST/PUT/PATCH/DELETE with auth, custom paths.</div><span class="node-card-pill" style="background:rgba(92,111,255,0.1);color:var(--node-webhook);border:1px solid rgba(92,111,255,0.2)">HTTP Trigger</span></div>
+      <div class="node-card" data-delay="80" style="border-color:rgba(59,130,246,0.2)"><div class="node-card-color" style="background:rgba(59,130,246,0.15)">🐘</div><div class="node-card-type" style="color:var(--node-postgres)">Trigger</div><div class="node-card-name">PostgreSQL Trigger</div><div class="node-card-desc">Fire workflows on INSERT, UPDATE, or DELETE events using native LISTEN/NOTIFY.</div><span class="node-card-pill" style="background:rgba(59,130,246,0.1);color:var(--node-postgres);border:1px solid rgba(59,130,246,0.2)">DB Event</span></div>
+      <div class="node-card" data-delay="160" style="border-color:rgba(0,212,200,0.2)"><div class="node-card-color" style="background:rgba(0,212,200,0.15)">🌐</div><div class="node-card-type" style="color:var(--node-http)">Core</div><div class="node-card-name">HTTP Request</div><div class="node-card-desc">Call any external REST API with full auth, headers, query params, and JSON/form bodies support.</div><span class="node-card-pill" style="background:rgba(0,212,200,0.1);color:var(--node-http);border:1px solid rgba(0,212,200,0.2)">Outbound HTTP</span></div>
+      <div class="node-card" data-delay="240" style="border-color:rgba(245,166,35,0.2)"><div class="node-card-color" style="background:rgba(245,166,35,0.15)">💻</div><div class="node-card-type" style="color:var(--node-code)">Core</div><div class="node-card-name">Code</div><div class="node-card-desc">Run custom JavaScript in an isolated V8 sandbox. Async/await support, fetch available. 5s timeout.</div><span class="node-card-pill" style="background:rgba(245,166,35,0.1);color:var(--node-code);border:1px solid rgba(245,166,35,0.2)">Sandbox VM</span></div>
+      <div class="node-card" data-delay="320" style="border-color:rgba(16,185,129,0.2)"><div class="node-card-color" style="background:rgba(16,185,129,0.15)">📤</div><div class="node-card-type" style="color:var(--node-respond)">Terminal</div><div class="node-card-name">Respond to Webhook</div><div class="node-card-desc">Send a custom HTTP response with full control over status code, headers, and response body.</div><span class="node-card-pill" style="background:rgba(16,185,129,0.1);color:var(--node-respond);border:1px solid rgba(16,185,129,0.2)">HTTP Response</span></div>
+      <div class="node-card" data-delay="400" style="border-color:rgba(239,68,68,0.2)"><div class="node-card-color" style="background:rgba(239,68,68,0.15)">🛑</div><div class="node-card-type" style="color:var(--node-error)">Terminal</div><div class="node-card-name">Error / Stop</div><div class="node-card-desc">Halt execution intentionally with a plain message or structured JSON. Sets status to Stopped.</div><span class="node-card-pill" style="background:rgba(239,68,68,0.1);color:var(--node-error);border:1px solid rgba(239,68,68,0.2)">Guard Clause</span></div>
+      <div class="node-card" data-delay="80" style="border-color:rgba(168,85,247,0.2)"><div class="node-card-color" style="background:rgba(168,85,247,0.15)">🔀</div><div class="node-card-type" style="color:var(--node-if)">Flow Control</div><div class="node-card-name">IF</div><div class="node-card-desc">Evaluate conditions with AND logic and branch to True or False paths.</div><span class="node-card-pill" style="background:rgba(168,85,247,0.1);color:var(--node-if);border:1px solid rgba(168,85,247,0.2)">Conditional</span></div>
+      <div class="node-card" data-delay="160" style="border-color:rgba(236,72,153,0.2)"><div class="node-card-color" style="background:rgba(236,72,153,0.15)">🎛</div><div class="node-card-type" style="color:var(--node-switch)">Flow Control</div><div class="node-card-name">Switch</div><div class="node-card-desc">Multi-case routing. Each case becomes its own branch. Default handles unmatched cases.</div><span class="node-card-pill" style="background:rgba(236,72,153,0.1);color:var(--node-switch);border:1px solid rgba(236,72,153,0.2)">Multi-Branch</span></div>
+      <div class="node-card" data-delay="240" style="border-color:rgba(245,158,11,0.2)"><div class="node-card-color" style="background:rgba(245,158,11,0.15)">🪣</div><div class="node-card-type" style="color:var(--node-s3)">AWS</div><div class="node-card-name">AWS S3</div><div class="node-card-desc">Full bucket and file management: upload, download, copy, delete. All fields support {{expressions}}.</div><span class="node-card-pill" style="background:rgba(245,158,11,0.1);color:var(--node-s3);border:1px solid rgba(245,158,11,0.2)">Object Storage</span></div>
+      <div class="node-card" data-delay="320" style="border-color:rgba(249,115,22,0.2)"><div class="node-card-color" style="background:rgba(249,115,22,0.15)">λ</div><div class="node-card-type" style="color:var(--node-lambda)">AWS</div><div class="node-card-name">AWS Lambda</div><div class="node-card-desc">Invoke any Lambda function synchronously with a JSON payload. Results flow into the next node.</div><span class="node-card-pill" style="background:rgba(249,115,22,0.1);color:var(--node-lambda);border:1px solid rgba(249,115,22,0.2)">Serverless</span></div>
+      <div class="node-card" data-delay="400" style="border-color:rgba(139,92,246,0.2)"><div class="node-card-color" style="background:rgba(139,92,246,0.15)">🧠</div><div class="node-card-type" style="color:var(--node-bedrock)">AWS</div><div class="node-card-name">AWS Bedrock</div><div class="node-card-desc">Generate text or structured JSON with Claude, Llama, Mistral, Cohere, and Titan models.</div><span class="node-card-pill" style="background:rgba(139,92,246,0.1);color:var(--node-bedrock);border:1px solid rgba(139,92,246,0.2)">Foundation Models</span></div>
+      <div class="node-card" data-delay="80" style="border-color:rgba(59,130,246,0.2)"><div class="node-card-color" style="background:rgba(59,130,246,0.15)">🗄</div><div class="node-card-type" style="color:var(--node-postgres)">Database</div><div class="node-card-name">PostgreSQL Action</div><div class="node-card-desc">SELECT, INSERT, UPDATE, DELETE, UPSERT, or raw SQL. Schema/table autocomplete.</div><span class="node-card-pill" style="background:rgba(59,130,246,0.1);color:var(--node-postgres);border:1px solid rgba(59,130,246,0.2)">CRUD + SQL</span></div>
+      <div class="node-card" data-delay="160" style="border-color:rgba(6,182,212,0.2)"><div class="node-card-color" style="background:rgba(6,182,212,0.15)">📄</div><div class="node-card-type" style="color:var(--node-extract)">Processing</div><div class="node-card-name">Extraction</div><div class="node-card-desc">Parse file buffers: PDF, CSV, JSON, XML, XLS, XLSX, and Base64. JSONPath and page range support.</div><span class="node-card-pill" style="background:rgba(6,182,212,0.1);color:var(--node-extract);border:1px solid rgba(6,182,212,0.2)">PDF / CSV / JSON…</span></div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- WORKFLOW DEMO -->
+<!-- ═══════════════════════════════════════════════════
+     AI FEATURES SECTION
+════════════════════════════════════════════════════ -->
+<section id="ai-features">
+  <div class="section-inner">
+    <div class="section-tag">// ai-powered</div>
+    <h2 class="section-title">Build and test<br>faster with AI</h2>
+    <p class="section-desc">Two built-in AI tools that eliminate the blank-canvas problem and make your workflows bulletproof before you ship.</p>
+
+    <div class="ai-features-grid">
+
+      <!-- ── CARD 1: Generate Workflow ── -->
+      <div class="ai-feat-card what-card" data-delay="0">
+        <div class="ai-feat-label">
+          <span class="ai-feat-tag" style="background:rgba(61,79,255,0.08);color:var(--accent);border:1px solid rgba(61,79,255,0.2)">✦ AI Workflow Generator</span>
+        </div>
+        <h3 class="ai-feat-title">Describe it.<br>We build it.</h3>
+        <p class="ai-feat-desc">Type a plain-English description of what you want to automate. BCON's AI generates a complete workflow — nodes, edges, names — and drops it straight onto your canvas.</p>
+
+        <!-- Mock prompt UI -->
+        <div class="ai-mock-ui">
+          <div class="ai-mock-header">
+            <div class="ai-mock-icon">✦</div>
+            <div>
+              <div class="ai-mock-title">Generate Workflow with AI</div>
+              <div class="ai-mock-sub">Describe what you want to automate</div>
+            </div>
+          </div>
+          <div class="ai-mock-chips">
+            <span class="ai-chip-ex">Webhook → S3 → HTTP notify</span>
+            <span class="ai-chip-ex">Postgres trigger → Lambda → respond</span>
+          </div>
+          <div class="ai-mock-textarea">Receive a webhook, classify the document with Bedrock AI, save result to Postgres, then respond 200 OK<span class="ai-cursor-blink">|</span></div>
+          <div class="ai-mock-footer">
+            <span class="ai-mock-hint">Ctrl+Enter to generate</span>
+            <div class="ai-mock-btn">
+              <span class="ai-stars-icon">✦</span> Generate
+            </div>
+          </div>
+        </div>
+
+        <!-- Generated preview -->
+        <div class="ai-gen-preview">
+          <div class="ai-gen-check">✓</div>
+          <div>
+            <div class="ai-gen-name">Document Classifier Pipeline</div>
+            <div class="ai-gen-desc">Webhook → Bedrock AI → IF → Postgres + Respond</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── CARD 2: AI Test Cases ── -->
+      <div class="ai-feat-card what-card" data-delay="150">
+        <div class="ai-feat-label">
+          <span class="ai-feat-tag" style="background:rgba(109,40,217,0.08);color:#6d28d9;border:1px solid rgba(109,40,217,0.2)">⬡ AI Test Case Generator</span>
+        </div>
+        <h3 class="ai-feat-title">Describe a scenario.<br>Get a payload.</h3>
+        <p class="ai-feat-desc">Define a test scenario in plain English. BCON reads your workflow's node structure and generates a realistic JSON payload to trigger and validate your workflow end-to-end.</p>
+
+        <!-- Mock test case UI -->
+        <div class="ai-mock-ui" style="border-color:rgba(109,40,217,0.18);">
+          <div class="ai-mock-header">
+            <div class="ai-mock-icon" style="background:rgba(109,40,217,0.12);color:#6d28d9;">⬡</div>
+            <div>
+              <div class="ai-mock-title">New Test Case</div>
+              <div class="ai-mock-sub">Define a payload to test this workflow</div>
+            </div>
+          </div>
+          <div class="ai-tc-field">
+            <div class="ai-tc-label">Describe what to test</div>
+            <div class="ai-tc-row">
+              <div class="ai-tc-input">An inactive user with a missing email field<span class="ai-cursor-blink">|</span></div>
+              <div class="ai-mock-btn" style="background:linear-gradient(135deg,#6d28d9,#7c3aed);flex-shrink:0">⬡ Generate via AI</div>
+            </div>
+          </div>
+          <div class="ai-tc-field" style="margin-top:0.6rem">
+            <div class="ai-tc-label">Payload (JSON)</div>
+            <div class="ai-tc-payload">
+              <span style="color:#6d28d9">{</span><br>
+              &nbsp;&nbsp;<span style="color:#1d4ed8">"userId"</span>: <span style="color:#047857">"usr_7f3k2"</span>,<br>
+              &nbsp;&nbsp;<span style="color:#1d4ed8">"status"</span>: <span style="color:#047857">"inactive"</span>,<br>
+              &nbsp;&nbsp;<span style="color:#1d4ed8">"email"</span>: <span style="color:#dc2626">null</span>,<br>
+              &nbsp;&nbsp;<span style="color:#1d4ed8">"role"</span>: <span style="color:#047857">"member"</span><br>
+              <span style="color:#6d28d9">}</span>
+            </div>
+          </div>
+        </div>
+
+      
+      </div>
+
+    </div><!-- /ai-features-grid -->
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════
+     INTERACTIVE WORKFLOW TUTORIAL
+════════════════════════════════════════════════════ -->
 <section class="flow-demo" id="workflow">
   <div class="section-inner">
-    <div class="section-tag">// example workflow</div>
-    <h2 class="section-title">AI document processor</h2>
-    <p class="section-desc">A real-world example: webhook receives a file → extract text → AI classifies it → save to DB → respond to caller.</p>
-    <div class="flow-canvas" id="flow-canvas">
-      <!-- Row 1 -->
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="flow-node-top">
-            <div class="flow-node-dot" style="background:var(--node-webhook)"></div>
-            <div class="flow-node-label">Webhook</div>
-          </div>
-          <div class="flow-node-sub">POST /api/process</div>
-        </div>
-        <div class="flow-connector"></div>
-        <div class="flow-node">
-          <div class="flow-node-top">
-            <div class="flow-node-dot" style="background:var(--node-extract)"></div>
-            <div class="flow-node-label">Extract PDF</div>
-          </div>
-          <div class="flow-node-sub">{{body.file.buffer}}</div>
-        </div>
-        <div class="flow-connector"></div>
-        <div class="flow-node">
-          <div class="flow-node-top">
-            <div class="flow-node-dot" style="background:var(--node-bedrock)"></div>
-            <div class="flow-node-label">Bedrock AI</div>
-          </div>
-          <div class="flow-node-sub">Claude 3.5 Sonnet</div>
-        </div>
-        <div class="flow-connector"></div>
-        <div class="flow-node">
-          <div class="flow-node-top">
-            <div class="flow-node-dot" style="background:var(--node-if)"></div>
-            <div class="flow-node-label">IF: Urgent?</div>
-          </div>
-          <div class="flow-node-sub">{{ai.result.urgency}}</div>
-        </div>
+    <div class="section-tag">// interactive tutorial</div>
+    <h2 class="section-title">Build workflows<br>in minutes</h2>
+    <p class="section-desc">Watch how BCON works — drag nodes from the panel, connect them on the canvas, then hit Run and watch your AI-powered workflow execute in real time.</p>
+
+    <!-- Phase progress indicator -->
+    <div class="demo-phase-bar" style="margin-top:2rem;">
+      <div class="demo-phase ph-1">
+        <span class="demo-phase-num">1</span>
+        Drag Nodes
       </div>
-      <!-- Row 2: branching -->
-      <div class="flow-row" style="margin-top:2rem;padding-left:calc(3*(160px + 30px) + 120px)">
-        <div style="display:flex;flex-direction:column;gap:1rem">
-          <div style="display:flex;align-items:center;gap:0.5rem">
-            <span class="flow-branch-label true-label">TRUE</span>
-            <div style="width:30px;height:1px;background:var(--node-respond);opacity:0.5"></div>
-            <div class="flow-node" style="border-color:rgba(16,185,129,0.3)">
-              <div class="flow-node-top">
-                <div class="flow-node-dot" style="background:var(--node-s3)"></div>
-                <div class="flow-node-label">Alert + Save</div>
-              </div>
-              <div class="flow-node-sub">S3 + Lambda</div>
-            </div>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.5rem">
-            <span class="flow-branch-label false-label">FALSE</span>
-            <div style="width:30px;height:1px;background:var(--node-error);opacity:0.5"></div>
-            <div class="flow-node">
-              <div class="flow-node-top">
-                <div class="flow-node-dot" style="background:var(--node-postgres)"></div>
-                <div class="flow-node-label">Insert DB</div>
-              </div>
-              <div class="flow-node-sub">postgres-action</div>
-            </div>
-          </div>
-        </div>
-        <div class="flow-connector" style="flex:0 0 30px"></div>
-        <div class="flow-node" style="border-color:rgba(16,185,129,0.3)">
-          <div class="flow-node-top">
-            <div class="flow-node-dot" style="background:var(--node-respond)"></div>
-            <div class="flow-node-label">Respond</div>
-          </div>
-          <div class="flow-node-sub">200 → {{result}}</div>
-        </div>
+      <span class="demo-phase-sep">──</span>
+      <div class="demo-phase ph-2">
+        <span class="demo-phase-num">2</span>
+        Connect
+      </div>
+      <span class="demo-phase-sep">──</span>
+      <div class="demo-phase ph-3">
+        <span class="demo-phase-num">3</span>
+        Run
+      </div>
+      <span class="demo-phase-sep">──</span>
+      <div class="demo-phase ph-4">
+        <span class="demo-phase-num">4</span>
+        AI Executes
       </div>
     </div>
+
+    <!-- ── EDITOR FRAME ── -->
+    <div class="editor-demo" id="editor-demo">
+
+      <!-- Top bar -->
+      <div class="editor-topbar">
+        <div class="editor-topbar-dot" style="background:#ff5f57"></div>
+        <div class="editor-topbar-dot" style="background:#febc2e"></div>
+        <div class="editor-topbar-dot" style="background:#28c840"></div>
+        <div class="editor-topbar-title">AI Document Processor — BCON Canvas</div>
+        <div class="editor-topbar-actions">
+          <div class="editor-zoom-btn">100%</div>
+          <div class="editor-zoom-btn">⊞ Fit</div>
+        </div>
+      </div>
+
+      <!-- Body: sidebar + canvas -->
+      <div class="editor-body">
+
+        <!-- LEFT PANEL — Node Palette -->
+        <div class="demo-sidebar">
+          <div class="demo-sidebar-title">// nodes</div>
+
+          <div class="demo-sidebar-group">Triggers</div>
+          <div class="demo-node-item dni-1">
+            <div class="dni-dot" style="background:#3d4fff"></div>
+            Webhook
+          </div>
+
+          <div class="demo-sidebar-group">AI / AWS</div>
+          <div class="demo-node-item dni-2">
+            <div class="dni-dot" style="background:#6d28d9"></div>
+            Bedrock AI
+          </div>
+
+          <div class="demo-sidebar-group">Flow Control</div>
+          <div class="demo-node-item dni-3">
+            <div class="dni-dot" style="background:#7c3aed"></div>
+            IF Condition
+          </div>
+
+          <div class="demo-sidebar-group">Database</div>
+          <div class="demo-node-item dni-4">
+            <div class="dni-dot" style="background:#1d4ed8"></div>
+            Postgres
+          </div>
+
+          <div class="demo-sidebar-group">Core</div>
+          <div class="demo-node-item dni-5">
+            <div class="dni-dot" style="background:#047857"></div>
+            Respond
+          </div>
+          <div class="demo-node-item" style="opacity:0.45;">
+            <div class="dni-dot" style="background:#c47a00"></div>
+            Code Node
+          </div>
+          <div class="demo-node-item" style="opacity:0.45;">
+            <div class="dni-dot" style="background:#00877e"></div>
+            HTTP Request
+          </div>
+        </div>
+
+        <!-- CANVAS -->
+        <div class="demo-canvas">
+
+          <!-- Run button -->
+          <button class="demo-run-btn">▶ Run</button>
+
+          <!-- ── SVG LAYER: edges + exec pulses ── -->
+          <!-- All coordinates are canvas-relative (canvas origin = 0,0) -->
+          <svg class="demo-edges" xmlns="http://www.w3.org/2000/svg">
+            <!-- Static edges (draw in on connect phase) -->
+            <!-- e1: Webhook → Bedrock  -->
+            <path class="demo-edge de-1"
+                  d="M167,195 C186,195 183,195 202,195"
+                  stroke-dasharray="300" />
+            <!-- e2: Bedrock → IF  -->
+            <path class="demo-edge de-2"
+                  d="M354,195 C374,195 371,195 390,195"
+                  stroke-dasharray="300" />
+            <!-- e3: IF → Postgres (TRUE) -->
+            <path class="demo-edge de-3"
+                  d="M542,183 C572,183 572,115 555,115"
+                  stroke-dasharray="300" />
+            <!-- e4: IF → Respond (FALSE) -->
+            <path class="demo-edge de-4"
+                  d="M542,207 C572,207 572,275 555,275"
+                  stroke-dasharray="300" />
+
+            <!-- Exec flow dash overlays (pulse during execution) -->
+            <path class="exec-edge de-1x"
+                  d="M167,195 C186,195 183,195 202,195"
+                  stroke-dasharray="12 22" />
+            <path class="exec-edge de-2x"
+                  d="M354,195 C374,195 371,195 390,195"
+                  stroke-dasharray="12 22" />
+            <path class="exec-edge de-3x"
+                  d="M542,183 C572,183 572,115 555,115"
+                  stroke-dasharray="12 22" />
+            <path class="exec-edge de-4x"
+                  d="M542,207 C572,207 572,275 555,275"
+                  stroke-dasharray="12 22" />
+          </svg>
+
+          <!-- ── WORKFLOW NODES ── -->
+
+          <!-- N1: Webhook (trigger) -->
+          <div class="wf-node wn-1">
+            <div class="wf-node-top">
+              <div class="wf-node-dot" style="background:#3d4fff"></div>
+              <div class="wf-node-name">Webhook</div>
+            </div>
+            <div class="wf-node-sub">POST /api/docs</div>
+            <span class="wf-node-badge" style="background:rgba(61,79,255,0.08);color:#3d4fff;border:1px solid rgba(61,79,255,0.18)">Trigger</span>
+            <div class="wf-node-check">✓</div>
+          </div>
+
+          <!-- N2: Bedrock AI -->
+          <div class="wf-node wn-2">
+            <div class="wf-node-top">
+              <div class="wf-node-dot" style="background:#6d28d9"></div>
+              <div class="wf-node-name">Bedrock AI</div>
+            </div>
+            <div class="wf-node-sub">Claude 3.5 Sonnet</div>
+            <span class="wf-node-badge" style="background:rgba(109,40,217,0.08);color:#6d28d9;border:1px solid rgba(109,40,217,0.2)">AI Agent</span>
+            <div class="wf-handle l"></div>
+            <div class="wf-node-check">✓</div>
+            <!-- AI spinner -->
+            <div class="wf-ai-ring">
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <circle cx="9" cy="9" r="7" fill="none" stroke="rgba(109,40,217,0.2)" stroke-width="2"/>
+                <circle cx="9" cy="9" r="7" fill="none" stroke="#6d28d9" stroke-width="2"
+                        stroke-dasharray="12 32" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- N3: IF Condition -->
+          <div class="wf-node wn-3">
+            <div class="wf-node-top">
+              <div class="wf-node-dot" style="background:#7c3aed"></div>
+              <div class="wf-node-name">IF Condition</div>
+            </div>
+            <div class="wf-node-sub">{{ai.category}}</div>
+            <span class="wf-node-badge" style="background:rgba(124,58,237,0.08);color:#7c3aed;border:1px solid rgba(124,58,237,0.2)">Branch</span>
+            <div class="wf-handle l"></div>
+            <div class="wf-handle rt"></div>
+            <div class="wf-handle rb"></div>
+            <div class="wf-node-check">✓</div>
+          </div>
+
+          <!-- N4: Postgres (TRUE branch) -->
+          <div class="wf-node wn-4">
+            <div class="wf-node-top">
+              <div class="wf-node-dot" style="background:#1d4ed8"></div>
+              <div class="wf-node-name">Postgres</div>
+            </div>
+            <div class="wf-node-sub">INSERT record</div>
+            <span class="wf-node-badge" style="background:rgba(29,78,216,0.08);color:#1d4ed8;border:1px solid rgba(29,78,216,0.2)">Action</span>
+            <div class="wf-handle l"></div>
+            <div class="wf-node-check">✓</div>
+          </div>
+
+          <!-- N5: Respond (FALSE branch) -->
+          <div class="wf-node wn-5">
+            <div class="wf-node-top">
+              <div class="wf-node-dot" style="background:#047857"></div>
+              <div class="wf-node-name">Respond</div>
+            </div>
+            <div class="wf-node-sub">200 OK · {{result}}</div>
+            <span class="wf-node-badge" style="background:rgba(4,120,87,0.08);color:#047857;border:1px solid rgba(4,120,87,0.2)">Terminal</span>
+            <div class="wf-handle l"></div>
+            <div class="wf-node-check">✓</div>
+          </div>
+
+          <!-- Branch labels -->
+          <div class="branch-label bl-true">TRUE</div>
+          <div class="branch-label bl-false">FALSE</div>
+
+          <!-- Step hint labels -->
+          <div class="demo-hint dh-1">
+            <span class="hint-dot" style="background:#3d4fff"></span>
+            Drag nodes from the panel onto the canvas
+          </div>
+          <div class="demo-hint dh-2">
+            <span class="hint-dot" style="background:#00a89e"></span>
+            Connect nodes by dragging between handles
+          </div>
+          <div class="demo-hint dh-3">
+            <span class="hint-dot" style="background:#3d4fff"></span>
+            Click ▶ Run to start execution
+          </div>
+          <div class="demo-hint dh-4">
+            <span class="hint-dot" style="background:#6d28d9"></span>
+            AI agent processing your workflow in real-time…
+          </div>
+          <div class="demo-hint dh-5">
+            <span class="hint-dot" style="background:#00a89e"></span>
+            ✓ Workflow completed successfully
+          </div>
+
+          <!-- Animated cursor -->
+          <div class="demo-cursor">
+            <svg viewBox="0 0 18 22" width="18" height="22" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 2,2 L 2,17 L 6,13 L 8.5,19.5 L 11,18.5 L 8.5,12 L 14,12 Z"
+                    fill="white" stroke="#1a1535" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+        </div><!-- /demo-canvas -->
+      </div><!-- /editor-body -->
+    </div><!-- /editor-demo -->
+
+    <!-- ── CALL TO ACTION ── -->
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="https://qa.healthfirsttech.com" class="try-app-btn" target="_blank" rel="noopener">
+        Try BCON yourself
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <p class="try-app-live">Live at <span>qa.healthfirsttech.com</span></p>
+    </div>
+
   </div>
 </section>
 
@@ -823,10 +1414,8 @@
         <div class="role-title">Platform Admin</div>
         <span class="role-badge" style="background:rgba(245,166,35,0.12);color:var(--gold);border:1px solid rgba(245,166,35,0.25)">super_admin</span>
         <ul class="role-features">
-          <li>Platform-wide statistics</li>
-          <li>Manage all organisations</li>
-          <li>All users & workspaces</li>
-          <li>Cross-org monitoring</li>
+          <li>Platform-wide statistics</li><li>Manage all organisations</li>
+          <li>All users &amp; workspaces</li><li>Cross-org monitoring</li>
           <li>Bootstrap via one-time key</li>
         </ul>
       </div>
@@ -835,10 +1424,8 @@
         <div class="role-title">Org Admin</div>
         <span class="role-badge" style="background:rgba(92,111,255,0.12);color:var(--accent);border:1px solid rgba(92,111,255,0.25)">admin</span>
         <ul class="role-features">
-          <li>Org stats & member management</li>
-          <li>Workspace oversight</li>
-          <li>Workflow monitoring</li>
-          <li>Credential management</li>
+          <li>Org stats &amp; member management</li><li>Workspace oversight</li>
+          <li>Workflow monitoring</li><li>Credential management</li>
           <li>Audit log access</li>
         </ul>
       </div>
@@ -847,10 +1434,8 @@
         <div class="role-title">Member</div>
         <span class="role-badge" style="background:rgba(0,212,200,0.12);color:var(--accent2);border:1px solid rgba(0,212,200,0.25)">workspace_member</span>
         <ul class="role-features">
-          <li>Dashboard & personal workspace</li>
-          <li>Workflows, executions, credentials</li>
-          <li>Workspace Admin: add/remove members</li>
-          <li>Assign workflow permissions</li>
+          <li>Dashboard &amp; personal workspace</li><li>Workflows, executions, credentials</li>
+          <li>Workspace Admin: add/remove members</li><li>Assign workflow permissions</li>
           <li>Feature-gated access (view/full)</li>
         </ul>
       </div>
@@ -863,17 +1448,14 @@
 <!-- SECURITY -->
 <section id="security">
   <div class="section-inner">
-    <div class="section-tag">// security & compliance</div>
+    <div class="section-tag">// security &amp; compliance</div>
     <h2 class="section-title">Built secure<br>by default</h2>
     <p class="section-desc">Enterprise identity, encrypted secrets, sandboxed code execution, and complete audit trails.</p>
     <div class="security-grid">
       <div class="security-card">
-        <div class="sec-title">
-          <div class="sec-icon" style="background:rgba(92,111,255,0.12)">🔑</div>
-          Identity & Auth
-        </div>
+        <div class="sec-title"><div class="sec-icon" style="background:rgba(92,111,255,0.12)">🔑</div>Identity &amp; Auth</div>
         <ul class="sec-list">
-          <li><span>→</span> AWS Cognito manages all passwords & MFA</li>
+          <li><span>→</span> AWS Cognito manages all passwords &amp; MFA</li>
           <li><span>→</span> Cognito access + refresh tokens (no custom JWT)</li>
           <li><span>→</span> Token auto-injected via HTTP interceptor</li>
           <li><span>→</span> 15-minute expiring invite links with short codes</li>
@@ -881,12 +1463,9 @@
         </ul>
       </div>
       <div class="security-card">
-        <div class="sec-title">
-          <div class="sec-icon" style="background:rgba(0,212,200,0.12)">🗄</div>
-          Data Isolation
-        </div>
+        <div class="sec-title"><div class="sec-icon" style="background:rgba(0,212,200,0.12)">🗄</div>Data Isolation</div>
         <ul class="sec-list">
-          <li><span>→</span> TypeORM subscriber auto-scopes all queries by orgId</li>
+          <li><span>→</span> TypeORM subscriber auto-scopes queries by orgId</li>
           <li><span>→</span> Cross-org writes throw ForbiddenException</li>
           <li><span>→</span> AsyncLocalStorage seeds request context per-request</li>
           <li><span>→</span> Credentials AES-256-GCM encrypted at rest</li>
@@ -894,10 +1473,7 @@
         </ul>
       </div>
       <div class="security-card">
-        <div class="sec-title">
-          <div class="sec-icon" style="background:rgba(245,166,35,0.12)">🏖</div>
-          Code Sandbox
-        </div>
+        <div class="sec-title"><div class="sec-icon" style="background:rgba(245,166,35,0.12)">🏖</div>Code Sandbox</div>
         <ul class="sec-list">
           <li><span>→</span> isolated-vm V8 sandbox — no Node.js API access</li>
           <li><span>→</span> 5-second execution timeout</li>
@@ -907,15 +1483,12 @@
         </ul>
       </div>
       <div class="security-card">
-        <div class="sec-title">
-          <div class="sec-icon" style="background:rgba(16,185,129,0.12)">📋</div>
-          Audit & Access
-        </div>
+        <div class="sec-title"><div class="sec-icon" style="background:rgba(16,185,129,0.12)">📋</div>Audit &amp; Access</div>
         <ul class="sec-list">
           <li><span>→</span> Full org-level audit log via /admin/audit-logs</li>
           <li><span>→</span> Route guards: authGuard, orgAdmin, superAdmin, feature</li>
           <li><span>→</span> /access-denied page with contextual messaging</li>
-          <li><span>→</span> SQL identifier injection prevention via quoteIdent()</li>
+          <li><span>→</span> SQL injection prevention via quoteIdent()</li>
           <li><span>→</span> Postgres loop guard prevents self-triggering cascades</li>
         </ul>
       </div>
@@ -933,134 +1506,102 @@
 </div>
 
 <footer>
-  <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318.62 77.19" style="height:22px;width:auto;color:#160d46"><g><path d="M79.36,54.74c0,12.29-9.93,22.3-22.18,22.44h0s-.6,0-.6,0c-1.36-.01-9.3-.06-54.88-.06H0v-6.12c0-3.59,2.92-6.51,6.51-6.51h51.19c5.03-.38,8.99-4.66,8.99-9.74,0-5.39-4.38-9.77-9.77-9.77l-8.6-.05c-4.63-.02-6.99-.02-8.25-.11v.07H6.51c-3.59,0-6.51-2.92-6.51-6.51v-6.12l52.75-.04c5.39,0,9.77-4.38,9.77-9.77s-4.38-9.77-9.77-9.77l-46.24-.03c-3.59,0-6.51-2.92-6.51-6.51V.01h52.06c.19,0,.44-.01.69-.01,12.37,0,22.44,10.07,22.44,22.44,0,5.17-1.79,10.19-5.05,14.17,5.78,4.23,9.22,10.98,9.22,18.13Z" fill="currentColor"/><path d="M158.17.01h1.71v6.12c0,3.59-2.92,6.51-6.51,6.51h-27.11c-14.29,0-25.92,11.63-25.92,25.92s11.63,25.92,25.92,25.92h27.11c3.59,0,6.51,2.92,6.51,6.51v6.12h-1.71c-25,0-30.41,0-31.57,0h0s-.33,0-.33,0h-.33s0,0,0,0l-1.06-.02c-20.85-.74-37.19-17.67-37.19-38.54S103.85.94,124.54.04h0s.34-.04.34-.04h1.71c1.17,0,6.57.01,31.57.01Z" fill="currentColor"/><path d="M237.41,38.56c0,21.26-17.3,38.56-38.56,38.56s-38.56-17.3-38.56-38.56S177.58,0,198.84,0s38.56,17.3,38.56,38.56ZM224.76,38.56c0-14.29-11.63-25.92-25.92-25.92s-25.92,11.63-25.92,25.92,11.63,25.92,25.92,25.92,25.92-11.63,25.92-25.92Z" fill="currentColor"/><path d="M312.12.01h6.5v77.1h-13.82l-.1-.14-42.95-57.87v19.25c0,3.59-2.92,6.51-6.51,6.51h-6.5V.01h13.78l.1.14,42.99,57.93V6.52c0-3.59,2.92-6.51,6.51-6.51Z" fill="currentColor"/></g></svg></div>
+  <div class="footer-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318.62 77.19" style="height:22px;width:auto;color:#160d46"><g><path d="M79.36,54.74c0,12.29-9.93,22.3-22.18,22.44h0s-.6,0-.6,0c-1.36-.01-9.3-.06-54.88-.06H0v-6.12c0-3.59,2.92-6.51,6.51-6.51h51.19c5.03-.38,8.99-4.66,8.99-9.74,0-5.39-4.38-9.77-9.77-9.77l-8.6-.05c-4.63-.02-6.99-.02-8.25-.11v.07H6.51c-3.59,0-6.51-2.92-6.51-6.51v-6.12l52.75-.04c5.39,0,9.77-4.38,9.77-9.77s-4.38-9.77-9.77-9.77l-46.24-.03c-3.59,0-6.51-2.92-6.51-6.51V.01h52.06c.19,0,.44-.01.69-.01,12.37,0,22.44,10.07,22.44,22.44,0,5.17-1.79,10.19-5.05,14.17,5.78,4.23,9.22,10.98,9.22,18.13Z" fill="currentColor"/><path d="M158.17.01h1.71v6.12c0,3.59-2.92,6.51-6.51,6.51h-27.11c-14.29,0-25.92,11.63-25.92,25.92s11.63,25.92,25.92,25.92h27.11c3.59,0,6.51,2.92,6.51,6.51v6.12h-1.71c-25,0-30.41,0-31.57,0h0s-.33,0-.33,0h-.33s0,0,0,0l-1.06-.02c-20.85-.74-37.19-17.67-37.19-38.54S103.85.94,124.54.04h0s.34-.04.34-.04h1.71c1.17,0,6.57.01,31.57.01Z" fill="currentColor"/><path d="M237.41,38.56c0,21.26-17.3,38.56-38.56,38.56s-38.56-17.3-38.56-38.56S177.58,0,198.84,0s38.56,17.3,38.56,38.56ZM224.76,38.56c0-14.29-11.63-25.92-25.92-25.92s-25.92,11.63-25.92,25.92,11.63,25.92,25.92,25.92,25.92-11.63,25.92-25.92Z" fill="currentColor"/><path d="M312.12.01h6.5v77.1h-13.82l-.1-.14-42.95-57.87v19.25c0,3.59-2.92,6.51-6.51,6.51h-6.5V.01h13.78l.1.14,42.99,57.93V6.52c0-3.59,2.92-6.51,6.51-6.51Z" fill="currentColor"/></g></svg>
+  </div>
   <div>Workflow Automation Platform · Built with Angular 21 + NestJS + AWS</div>
   <div style="color:var(--accent);font-size:0.7rem">v1.0 PRODUCTION</div>
 </footer>
 
 <script>
-// ── CANVAS ANIMATION ──
+/* ── HERO CANVAS ANIMATION ── */
 const canvas = document.getElementById('hero-canvas');
 const ctx = canvas.getContext('2d');
-let W, H, nodes = [], edges = [], animFrame;
+let W, H, nodes = [], edges = [], particles = [];
+
+const NODE_COLORS = ['#3d4fff','#00a89e','#c47a00','#7c3aed','#c2185b','#047857','#dc2626','#1d4ed8'];
 
 function resize() {
   W = canvas.width = window.innerWidth;
   H = canvas.height = window.innerHeight;
+  initNodes();
 }
 
-const NODE_COLORS = ['#3d4fff','#00a89e','#c47a00','#7c3aed','#c2185b','#047857','#dc2626','#1d4ed8'];
-
 function initNodes() {
-  nodes = [];
-  edges = [];
-  const count = Math.floor(W / 120);
+  nodes = []; edges = [];
+  const count = Math.max(8, Math.floor(W / 130));
   for (let i = 0; i < count; i++) {
     nodes.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      r: Math.random() * 5 + 3,
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 4 + 3,
       color: NODE_COLORS[Math.floor(Math.random() * NODE_COLORS.length)],
       pulse: Math.random() * Math.PI * 2,
     });
   }
-  // create edges between nearby nodes
   for (let i = 0; i < nodes.length; i++) {
-    for (let j = i+1; j < nodes.length; j++) {
-      const dx = nodes[i].x - nodes[j].x;
-      const dy = nodes[i].y - nodes[j].y;
-      if (Math.sqrt(dx*dx+dy*dy) < 200) {
-        edges.push([i,j]);
-      }
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+      if (Math.sqrt(dx*dx + dy*dy) < 220) edges.push([i, j]);
     }
   }
 }
 
-let particlesOnEdge = [];
-function addParticle() {
+setInterval(() => {
   if (edges.length === 0) return;
-  const edge = edges[Math.floor(Math.random() * edges.length)];
-  particlesOnEdge.push({ edge, t: 0, speed: Math.random() * 0.006 + 0.003 });
-}
-setInterval(addParticle, 400);
+  const e = edges[Math.floor(Math.random() * edges.length)];
+  particles.push({ edge: e, t: 0, speed: Math.random() * 0.007 + 0.003 });
+}, 450);
 
 function draw(time) {
   ctx.clearRect(0, 0, W, H);
-
-  // draw edges
-  edges.forEach(([i, j]) => {
-    const a = nodes[i], b = nodes[j];
-    const dx = a.x - b.x, dy = a.y - b.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    const alpha = Math.max(0, (200 - dist) / 200) * 0.12;
-    ctx.strokeStyle = `rgba(61,79,255,${alpha})`;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(a.x, a.y);
-    ctx.lineTo(b.x, b.y);
-    ctx.stroke();
-  });
-
-  // particles on edges
-  particlesOnEdge = particlesOnEdge.filter(p => {
-    p.t += p.speed;
-    if (p.t > 1) return false;
-    const a = nodes[p.edge[0]], b = nodes[p.edge[1]];
-    const x = a.x + (b.x - a.x) * p.t;
-    const y = a.y + (b.y - a.y) * p.t;
-    ctx.beginPath();
-    ctx.arc(x, y, 2, 0, Math.PI*2);
-    ctx.fillStyle = `rgba(0,168,158,${(1-p.t)*0.7})`;
-    ctx.fill();
-    return true;
-  });
-
-  // draw nodes
   nodes.forEach(n => {
-    n.pulse += 0.04;
     n.x += n.vx; n.y += n.vy;
     if (n.x < 0 || n.x > W) n.vx *= -1;
     if (n.y < 0 || n.y > H) n.vy *= -1;
-    const r = n.r + Math.sin(n.pulse) * 1.5;
-
-    // glow
-    const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r*4);
-    grd.addColorStop(0, n.color + '44');
-    grd.addColorStop(1, n.color + '00');
-    ctx.beginPath();
-    ctx.arc(n.x, n.y, r*4, 0, Math.PI*2);
-    ctx.fillStyle = grd;
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(n.x, n.y, r, 0, Math.PI*2);
-    ctx.fillStyle = n.color;
-    ctx.fill();
+    n.pulse += 0.02;
+    const pr = n.r + Math.sin(n.pulse) * 1.5;
+    ctx.beginPath(); ctx.arc(n.x, n.y, pr, 0, Math.PI*2);
+    ctx.fillStyle = n.color; ctx.fill();
   });
-
-  animFrame = requestAnimationFrame(draw);
+  edges.forEach(([i, j]) => {
+    const a = nodes[i], b = nodes[j];
+    const dx = a.x-b.x, dy = a.y-b.y, dist = Math.sqrt(dx*dx+dy*dy);
+    const alpha = Math.max(0, (220 - dist) / 220) * 0.14;
+    ctx.strokeStyle = `rgba(61,79,255,${alpha})`; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  });
+  particles = particles.filter(p => {
+    p.t += p.speed;
+    if (p.t > 1) return false;
+    const a = nodes[p.edge[0]], b = nodes[p.edge[1]];
+    const px = a.x + (b.x - a.x) * p.t, py = a.y + (b.y - a.y) * p.t;
+    ctx.beginPath(); ctx.arc(px, py, 2.5, 0, Math.PI*2);
+    ctx.fillStyle = NODE_COLORS[Math.floor(Math.random() * NODE_COLORS.length)];
+    ctx.fill(); return true;
+  });
+  requestAnimationFrame(draw);
 }
 
+window.addEventListener('resize', resize);
 resize();
-initNodes();
-draw(0);
-window.addEventListener('resize', () => { resize(); initNodes(); });
+requestAnimationFrame(draw);
 
-// ── SCROLL REVEAL ──
-const observer = new IntersectionObserver((entries) => {
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const el = entry.target;
-      const delay = parseInt(el.dataset.delay || 0);
+      const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
       setTimeout(() => el.classList.add('revealed'), delay);
-      observer.unobserve(el);
+      revealObserver.unobserve(el);
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.what-card, .node-card, .role-card, .security-card, #arch-diagram, #flow-canvas').forEach(el => observer.observe(el));
+document.querySelectorAll(
+  '.what-card, .arch-diagram, .node-card, .role-card, .security-card, .editor-demo'
+).forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
